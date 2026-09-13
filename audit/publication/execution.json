@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "timestamp_utc": "2026-09-13T08:17:40.564864+00:00",
+  "total_notebook_cells": 57,
+  "executed_notebook_code_cells": 26,
+  "extra_inspection_cells": 1,
+  "execution_seconds": 23.13,
+  "fresh_kernel": true,
+  "warnings": [],
+  "execution_environment": "Local CPU; same Python environment as this command; temporary Kaggle directory mirror",
+  "path_changes_in_replay_only": [
+    "/kaggle/input to kaggle/input",
+    "/kaggle/working to kaggle/working"
+  ],
+  "published_notebook_paths": "Unchanged Kaggle absolute paths",
+  "notebook_sha256": "460d7852dfe4d4b998d5b35ce5d2b14bdb1b25f0a009c37b20f91e0046bffed4",
+  "limits": "Not run on hosted Kaggle; not a test of every dependency version or fallback branch"
+}

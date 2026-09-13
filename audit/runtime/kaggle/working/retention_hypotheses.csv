@@ -1,0 +1,5 @@
+pattern,training_evidence,candidate_hypothesis,limitation
+Transaction activity,Lowest vs highest quartile: 37.5% vs 1.3%,Reactivation / engagement review,Association only; engagement intervention effect unknown
+Inactivity,Adequate-n levels 1 vs 6: 4.3% vs 15.7% churn,Service / usage check,Observational association; confounding and timing unresolved
+Contact frequency,Adequate-n levels 0 vs 5: 1.6% vs 32.7% churn,Investigate possible service friction,Observational association; confounding and timing unresolved
+Relationship depth,Adequate-n levels 1 vs 6: 25.8% vs 11.2% churn,Relationship needs review,Observational association; confounding and timing unresolved

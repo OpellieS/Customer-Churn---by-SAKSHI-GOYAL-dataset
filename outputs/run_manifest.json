@@ -1,0 +1,26 @@
+{
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.4.2",
+    "pandas": "3.0.0",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2",
+    "shap": "0.52.0",
+    "xgboost": "3.4.1",
+    "lightgbm": "4.7.0"
+  },
+  "random_state": 42,
+  "source_file": "BankChurners.csv",
+  "source_sha256": "c91b525a2a6755a1b0b80dad1d0d008ca97ec4df34552c8f47ffa12b6184b779",
+  "source_rows": 10127,
+  "analytical_rows": 10127,
+  "primary_model": "LightGBM benchmark",
+  "course_forest": "Random Forest tuned",
+  "cv_leader": "LightGBM benchmark",
+  "frozen_threshold": 0.271024392128117,
+  "shap_reference": "tree_path_dependent (tree path training counts)",
+  "shap_max_additivity_error": 1.9317880628477724e-14,
+  "bootstrap_replicates": 500,
+  "scope": "Historical snapshot; no validated future churn horizon, causal uplift, CLV or ROI"
+}

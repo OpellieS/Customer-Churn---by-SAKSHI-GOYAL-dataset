@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "scope": "Project candidates from git cached + untracked excluding ignored; .git internals not scanned",
+  "files_checked": 119,
+  "maximum_file_bytes": 1798141,
+  "total_file_bytes": 10321232,
+  "local_markdown_links_checked": 148,
+  "archive_entries": 32,
+  "archive_matches_final_files": true,
+  "secret_scan": "No high-confidence token/private-key patterns or private user paths found; pattern scan is not a universal secret detector",
+  "oversized_files": [],
+  "issues": [],
+  "intentional_exclusions": [
+    ".DS_Store",
+    "audit/runtime/kaggle/input/credit-card-customers/BankChurners.csv",
+    "temporary execution environments and caches outside project"
+  ],
+  "historical_evidence_preserved": true,
+  "git_lfs_needed": false,
+  "note": "Pre-commit package check; remote publication verified separately after push"
+}

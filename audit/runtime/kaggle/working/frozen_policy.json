@@ -1,0 +1,8 @@
+{
+  "model": "LightGBM benchmark",
+  "threshold": 0.271024392128117,
+  "FN_cost": 5,
+  "FP_cost": 1,
+  "selection": "Forest variant by Train CV AP; final family by Validation AP/Brier rule; threshold by Validation loss",
+  "source_sha256": "c91b525a2a6755a1b0b80dad1d0d008ca97ec4df34552c8f47ffa12b6184b779"
+}

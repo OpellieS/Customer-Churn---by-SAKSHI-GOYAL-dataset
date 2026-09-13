@@ -1,0 +1,1340 @@
+บันทึก outputs จาก audit ก่อนแก้ไข; ปิดบังเฉพาะ prefix path ของ environment ส่วนบุคคลในการเตรียมเผยแพร่ ไม่แก้ตัวเลขผลวิเคราะห์
+
+CELL 3 stderr
+[local-validation-environment]/lib/python3.13/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+
+
+CELL 3 TEXT
+             version
+python        3.13.5
+numpy          2.4.2
+pandas         3.0.0
+scikit-learn   1.8.0
+matplotlib    3.10.8
+seaborn       0.13.2
+shap          0.52.0
+
+CELL 3 stdout
+Reproducible seed: 42
+
+
+CELL 5 stdout
+CSV files inspected: 1; target-bearing candidates: 1
+Selected input file: kaggle/input/credit-card-customers/BankChurners.csv
+Source SHA-256: c91b525a2a6755a1b0b80dad1d0d008ca97ec4df34552c8f47ffa12b6184b779
+Source dimensions: (10127, 23)
+Columns: ['CLIENTNUM', 'Attrition_Flag', 'Customer_Age', 'Gender', 'Dependent_count', 'Education_Level', 'Marital_Status', 'Income_Category', 'Card_Category', 'Months_on_book', 'Total_Relationship_Count', 'Months_Inactive_12_mon', 'Contacts_Count_12_mon', 'Credit_Limit', 'Total_Revolving_Bal', 'Avg_Open_To_Buy', 'Total_Amt_Chng_Q4_Q1', 'Total_Trans_Amt', 'Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Avg_Utilization_Ratio', 'Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_1', 'Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_2']
+
+
+CELL 5 TEXT
+   CLIENTNUM     Attrition_Flag  Customer_Age Gender  Dependent_count  \
+0  768805383  Existing Customer            45      M                3   
+1  818770008  Existing Customer            49      F                5   
+2  713982108  Existing Customer            51      M                3   
+3  769911858  Existing Customer            40      F                4   
+4  709106358  Existing Customer            40      M                3   
+
+  Education_Level Marital_Status Income_Category Card_Category  \
+0     High School        Married     $60K - $80K          Blue   
+1        Graduate         Single  Less than $40K          Blue   
+2        Graduate        Married    $80K - $120K          Blue   
+3     High School        Unknown  Less than $40K          Blue   
+4      Uneducated        Married     $60K - $80K          Blue   
+
+   Months_on_book  Total_Relationship_Count  Months_Inactive_12_mon  \
+0              39                         5                       1   
+1              44                         6                       1   
+2              36                         4                       1   
+3              34                         3                       4   
+4              21                         5                       1   
+
+   Contacts_Count_12_mon  Credit_Limit  Total_Revolving_Bal  Avg_Open_To_Buy  \
+0                      3       12691.0                  777          11914.0   
+1                      2        8256.0                  864           7392.0   
+2                      0        3418.0                    0           3418.0   
+3                      1        3313.0                 2517            796.0   
+4                      0        4716.0                    0           4716.0   
+
+   Total_Amt_Chng_Q4_Q1  Total_Trans_Amt  Total_Trans_Ct  Total_Ct_Chng_Q4_Q1  \
+0                 1.335             1144              42                1.625   
+1                 1.541             1291              33                3.714   
+2                 2.594             1887              20                2.333   
+3                 1.405             1171              20                2.333   
+4                 2.175              816              28                2.500   
+
+   Avg_Utilization_Ratio  \
+0                  0.061   
+1                  0.105   
+2                  0.000   
+3                  0.760   
+4                  0.000   
+
+   Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_1  \
+0                                           0.000093                                                                                    
+1                                           0.000057                                                                                    
+2                                           0.000021                                                                                    
+3                                           0.000134                                                                                    
+4                                           0.000022                                                                                    
+
+   Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_2  
+0                                            0.99991                                                                                   
+1                                            0.99994                                                                                   
+2                                            0.99998                                                                                   
+3                                            0.99987                                                                                   
+4                                            0.99998                                                                                   
+
+CELL 5 TEXT
+                                                      dtype
+CLIENTNUM                                             int64
+Attrition_Flag                                          str
+Customer_Age                                          int64
+Gender                                                  str
+Dependent_count                                       int64
+Education_Level                                         str
+Marital_Status                                          str
+Income_Category                                         str
+Card_Category                                           str
+Months_on_book                                        int64
+Total_Relationship_Count                              int64
+Months_Inactive_12_mon                                int64
+Contacts_Count_12_mon                                 int64
+Credit_Limit                                        float64
+Total_Revolving_Bal                                   int64
+Avg_Open_To_Buy                                     float64
+Total_Amt_Chng_Q4_Q1                                float64
+Total_Trans_Amt                                       int64
+Total_Trans_Ct                                        int64
+Total_Ct_Chng_Q4_Q1                                 float64
+Avg_Utilization_Ratio                               float64
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...  float64
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...  float64
+
+CELL 5 TEXT
+                                                      count unique  \
+CLIENTNUM                                           10127.0    NaN   
+Attrition_Flag                                        10127      2   
+Customer_Age                                        10127.0    NaN   
+Gender                                                10127      2   
+Dependent_count                                     10127.0    NaN   
+Education_Level                                       10127      7   
+Marital_Status                                        10127      4   
+Income_Category                                       10127      6   
+Card_Category                                         10127      4   
+Months_on_book                                      10127.0    NaN   
+Total_Relationship_Count                            10127.0    NaN   
+Months_Inactive_12_mon                              10127.0    NaN   
+Contacts_Count_12_mon                               10127.0    NaN   
+Credit_Limit                                        10127.0    NaN   
+Total_Revolving_Bal                                 10127.0    NaN   
+Avg_Open_To_Buy                                     10127.0    NaN   
+Total_Amt_Chng_Q4_Q1                                10127.0    NaN   
+Total_Trans_Amt                                     10127.0    NaN   
+Total_Trans_Ct                                      10127.0    NaN   
+Total_Ct_Chng_Q4_Q1                                 10127.0    NaN   
+Avg_Utilization_Ratio                               10127.0    NaN   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...  10127.0    NaN   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...  10127.0    NaN   
+
+                                                                  top  freq  \
+CLIENTNUM                                                         NaN   NaN   
+Attrition_Flag                                      Existing Customer  8500   
+Customer_Age                                                      NaN   NaN   
+Gender                                                              F  5358   
+Dependent_count                                                   NaN   NaN   
+Education_Level                                              Graduate  3128   
+Marital_Status                                                Married  4687   
+Income_Category                                        Less than $40K  3561   
+Card_Category                                                    Blue  9436   
+Months_on_book                                                    NaN   NaN   
+Total_Relationship_Count                                          NaN   NaN   
+Months_Inactive_12_mon                                            NaN   NaN   
+Contacts_Count_12_mon                                             NaN   NaN   
+Credit_Limit                                                      NaN   NaN   
+Total_Revolving_Bal                                               NaN   NaN   
+Avg_Open_To_Buy                                                   NaN   NaN   
+Total_Amt_Chng_Q4_Q1                                              NaN   NaN   
+Total_Trans_Amt                                                   NaN   NaN   
+Total_Trans_Ct                                                    NaN   NaN   
+Total_Ct_Chng_Q4_Q1                                               NaN   NaN   
+Avg_Utilization_Ratio                                             NaN   NaN   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...                NaN   NaN   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...                NaN   NaN   
+
+                                                                mean  \
+CLIENTNUM                                           739177606.333663   
+Attrition_Flag                                                   NaN   
+Customer_Age                                                46.32596   
+Gender                                                           NaN   
+Dependent_count                                             2.346203   
+Education_Level                                                  NaN   
+Marital_Status                                                   NaN   
+Income_Category                                                  NaN   
+Card_Category                                                    NaN   
+Months_on_book                                             35.928409   
+Total_Relationship_Count                                     3.81258   
+Months_Inactive_12_mon                                      2.341167   
+Contacts_Count_12_mon                                       2.455317   
+Credit_Limit                                             8631.953698   
+Total_Revolving_Bal                                      1162.814061   
+Avg_Open_To_Buy                                          7469.139637   
+Total_Amt_Chng_Q4_Q1                                        0.759941   
+Total_Trans_Amt                                          4404.086304   
+Total_Trans_Ct                                             64.858695   
+Total_Ct_Chng_Q4_Q1                                         0.712222   
+Avg_Utilization_Ratio                                       0.274894   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...          0.159997   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...          0.840003   
+
+                                                                std  \
+CLIENTNUM                                           36903783.450231   
+Attrition_Flag                                                  NaN   
+Customer_Age                                               8.016814   
+Gender                                                          NaN   
+Dependent_count                                            1.298908   
+Education_Level                                                 NaN   
+Marital_Status                                                  NaN   
+Income_Category                                                 NaN   
+Card_Category                                                   NaN   
+Months_on_book                                             7.986416   
+Total_Relationship_Count                                   1.554408   
+Months_Inactive_12_mon                                     1.010622   
+Contacts_Count_12_mon                                      1.106225   
+Credit_Limit                                             9088.77665   
+Total_Revolving_Bal                                      814.987335   
+Avg_Open_To_Buy                                         9090.685324   
+Total_Amt_Chng_Q4_Q1                                       0.219207   
+Total_Trans_Amt                                         3397.129254   
+Total_Trans_Ct                                             23.47257   
+Total_Ct_Chng_Q4_Q1                                        0.238086   
+Avg_Utilization_Ratio                                      0.275691   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...         0.365301   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...         0.365301   
+
+                                                            min          25%  \
+CLIENTNUM                                           708082083.0  713036770.5   
+Attrition_Flag                                              NaN          NaN   
+Customer_Age                                               26.0         41.0   
+Gender                                                      NaN          NaN   
+Dependent_count                                             0.0          1.0   
+Education_Level                                             NaN          NaN   
+Marital_Status                                              NaN          NaN   
+Income_Category                                             NaN          NaN   
+Card_Category                                               NaN          NaN   
+Months_on_book                                             13.0         31.0   
+Total_Relationship_Count                                    1.0          3.0   
+Months_Inactive_12_mon                                      0.0          2.0   
+Contacts_Count_12_mon                                       0.0          2.0   
+Credit_Limit                                             1438.3       2555.0   
+Total_Revolving_Bal                                         0.0        359.0   
+Avg_Open_To_Buy                                             3.0       1324.5   
+Total_Amt_Chng_Q4_Q1                                        0.0        0.631   
+Total_Trans_Amt                                           510.0       2155.5   
+Total_Trans_Ct                                             10.0         45.0   
+Total_Ct_Chng_Q4_Q1                                         0.0        0.582   
+Avg_Utilization_Ratio                                       0.0        0.023   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...     0.000008     0.000099   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...      0.00042      0.99966   
+
+                                                            50%          75%  \
+CLIENTNUM                                           717926358.0  773143533.0   
+Attrition_Flag                                              NaN          NaN   
+Customer_Age                                               46.0         52.0   
+Gender                                                      NaN          NaN   
+Dependent_count                                             2.0          3.0   
+Education_Level                                             NaN          NaN   
+Marital_Status                                              NaN          NaN   
+Income_Category                                             NaN          NaN   
+Card_Category                                               NaN          NaN   
+Months_on_book                                             36.0         40.0   
+Total_Relationship_Count                                    4.0          5.0   
+Months_Inactive_12_mon                                      2.0          3.0   
+Contacts_Count_12_mon                                       2.0          3.0   
+Credit_Limit                                             4549.0      11067.5   
+Total_Revolving_Bal                                      1276.0       1784.0   
+Avg_Open_To_Buy                                          3474.0       9859.0   
+Total_Amt_Chng_Q4_Q1                                      0.736        0.859   
+Total_Trans_Amt                                          3899.0       4741.0   
+Total_Trans_Ct                                             67.0         81.0   
+Total_Ct_Chng_Q4_Q1                                       0.702        0.818   
+Avg_Utilization_Ratio                                     0.176        0.503   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...     0.000181     0.000337   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...      0.99982       0.9999   
+
+                                                            max  
+CLIENTNUM                                           828343083.0  
+Attrition_Flag                                              NaN  
+Customer_Age                                               73.0  
+Gender                                                      NaN  
+Dependent_count                                             5.0  
+Education_Level                                             NaN  
+Marital_Status                                              NaN  
+Income_Category                                             NaN  
+Card_Category                                               NaN  
+Months_on_book                                             56.0  
+Total_Relationship_Count                                    6.0  
+Months_Inactive_12_mon                                      6.0  
+Contacts_Count_12_mon                                       6.0  
+Credit_Limit                                            34516.0  
+Total_Revolving_Bal                                      2517.0  
+Avg_Open_To_Buy                                         34516.0  
+Total_Amt_Chng_Q4_Q1                                      3.397  
+Total_Trans_Amt                                         18484.0  
+Total_Trans_Ct                                            139.0  
+Total_Ct_Chng_Q4_Q1                                       3.714  
+Avg_Utilization_Ratio                                     0.999  
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...      0.99958  
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...      0.99999  
+
+CELL 5 TEXT
+                      n
+Attrition_Flag         
+Existing Customer  8500
+Attrited Customer  1627
+
+CELL 6 TEXT
+                                                field    dtype  \
+0                                           CLIENTNUM    int64   
+1                                      Attrition_Flag      str   
+2                                        Customer_Age    int64   
+3                                              Gender      str   
+4                                     Dependent_count    int64   
+5                                     Education_Level      str   
+6                                      Marital_Status      str   
+7                                     Income_Category      str   
+8                                       Card_Category      str   
+9                                      Months_on_book    int64   
+10                           Total_Relationship_Count    int64   
+11                             Months_Inactive_12_mon    int64   
+12                              Contacts_Count_12_mon    int64   
+13                                       Credit_Limit  float64   
+14                                Total_Revolving_Bal    int64   
+15                                    Avg_Open_To_Buy  float64   
+16                               Total_Amt_Chng_Q4_Q1  float64   
+17                                    Total_Trans_Amt    int64   
+18                                     Total_Trans_Ct    int64   
+19                                Total_Ct_Chng_Q4_Q1  float64   
+20                              Avg_Utilization_Ratio  float64   
+21  Naive_Bayes_Classifier_Attrition_Flag_Card_Cat...  float64   
+22  Naive_Bayes_Classifier_Attrition_Flag_Card_Cat...  float64   
+
+                           group                             meaning  \
+0        Identity / demographics                 Customer identifier   
+1                         Target           Source attrition category   
+2        Identity / demographics                        Customer age   
+3        Identity / demographics            Recorded gender category   
+4        Identity / demographics                 Recorded dependents   
+5        Identity / demographics                  Education category   
+6        Identity / demographics             Marital-status category   
+7        Identity / demographics             Income band as recorded   
+8            Plan / relationship                           Card tier   
+9            Plan / relationship              Length of relationship   
+10           Plan / relationship         Products/relationships held   
+11       Behavior / transactions                     Inactive months   
+12             Service / contact                   Recorded contacts   
+13                Money / credit                        Credit limit   
+14                Money / credit                   Revolving balance   
+15                Money / credit          Average open-to-buy credit   
+16       Behavior / transactions  Amount change measure Q4 versus Q1   
+17       Behavior / transactions            Total transaction amount   
+18       Behavior / transactions                   Transaction count   
+19       Behavior / transactions   Count change measure Q4 versus Q1   
+20                Money / credit                 Average utilization   
+21  Target-related source output   Source classifier output; exclude   
+22  Target-related source output   Source classifier output; exclude   
+
+                          unit  \
+0                   identifier   
+1                     category   
+2                        years   
+3                     category   
+4                        count   
+5                     category   
+6                     category   
+7              source category   
+8                     category   
+9                       months   
+10                       count   
+11                      months   
+12                       count   
+13        currency unspecified   
+14        currency unspecified   
+15        currency unspecified   
+16  dimensionless source ratio   
+17        currency unspecified   
+18                       count   
+19  dimensionless source ratio   
+20                       ratio   
+21      probability-like score   
+22      probability-like score   
+
+                                       window_or_note  
+0                                        Snapshot key  
+1                         Outcome horizon unspecified  
+2                        Measurement date unspecified  
+3                   Collection definition unspecified  
+4                        Measurement date unspecified  
+5                                 Unknown is explicit  
+6                                 Unknown is explicit  
+7                Currency/period unspecified in table  
+8                                            Snapshot  
+9                              As-of date unspecified  
+10                             As-of date unspecified  
+11    12-month label; calendar boundaries unspecified  
+12       12-month label; direction/reason unspecified  
+13                             As-of date unspecified  
+14                             As-of date unspecified  
+15                       Averaging window unspecified  
+16          Calendar year / exact formula unspecified  
+17  Exact cut-off and aggregation window unspecifi...  
+18  Exact cut-off and aggregation window unspecifi...  
+19          Calendar year / exact formula unspecified  
+20                       Averaging window unspecified  
+21                        Training origin unspecified  
+22                        Training origin unspecified  
+
+CELL 7 TEXT
+                                                    missing_cells  \
+CLIENTNUM                                                       0   
+Attrition_Flag                                                  0   
+Customer_Age                                                    0   
+Gender                                                          0   
+Dependent_count                                                 0   
+Education_Level                                                 0   
+Marital_Status                                                  0   
+Income_Category                                                 0   
+Card_Category                                                   0   
+Months_on_book                                                  0   
+Total_Relationship_Count                                        0   
+Months_Inactive_12_mon                                          0   
+Contacts_Count_12_mon                                           0   
+Credit_Limit                                                    0   
+Total_Revolving_Bal                                             0   
+Avg_Open_To_Buy                                                 0   
+Total_Amt_Chng_Q4_Q1                                            0   
+Total_Trans_Amt                                                 0   
+Total_Trans_Ct                                                  0   
+Total_Ct_Chng_Q4_Q1                                             0   
+Avg_Utilization_Ratio                                           0   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...              0   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...              0   
+
+                                                    unique_nonmissing  \
+CLIENTNUM                                                       10127   
+Attrition_Flag                                                      2   
+Customer_Age                                                       45   
+Gender                                                              2   
+Dependent_count                                                     6   
+Education_Level                                                     7   
+Marital_Status                                                      4   
+Income_Category                                                     6   
+Card_Category                                                       4   
+Months_on_book                                                     44   
+Total_Relationship_Count                                            6   
+Months_Inactive_12_mon                                              7   
+Contacts_Count_12_mon                                               7   
+Credit_Limit                                                     6205   
+Total_Revolving_Bal                                              1974   
+Avg_Open_To_Buy                                                  6813   
+Total_Amt_Chng_Q4_Q1                                             1158   
+Total_Trans_Amt                                                  5033   
+Total_Trans_Ct                                                    126   
+Total_Ct_Chng_Q4_Q1                                               830   
+Avg_Utilization_Ratio                                             964   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...               1704   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...                640   
+
+                                                    unknown_category_cells  \
+CLIENTNUM                                                                0   
+Attrition_Flag                                                           0   
+Customer_Age                                                             0   
+Gender                                                                   0   
+Dependent_count                                                          0   
+Education_Level                                                       1519   
+Marital_Status                                                         749   
+Income_Category                                                       1112   
+Card_Category                                                            0   
+Months_on_book                                                           0   
+Total_Relationship_Count                                                 0   
+Months_Inactive_12_mon                                                   0   
+Contacts_Count_12_mon                                                    0   
+Credit_Limit                                                             0   
+Total_Revolving_Bal                                                      0   
+Avg_Open_To_Buy                                                          0   
+Total_Amt_Chng_Q4_Q1                                                     0   
+Total_Trans_Amt                                                          0   
+Total_Trans_Ct                                                           0   
+Total_Ct_Chng_Q4_Q1                                                      0   
+Avg_Utilization_Ratio                                                    0   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...                       0   
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...                       0   
+
+                                                    infinite_cells  
+CLIENTNUM                                                        0  
+Attrition_Flag                                                   0  
+Customer_Age                                                     0  
+Gender                                                           0  
+Dependent_count                                                  0  
+Education_Level                                                  0  
+Marital_Status                                                   0  
+Income_Category                                                  0  
+Card_Category                                                    0  
+Months_on_book                                                   0  
+Total_Relationship_Count                                         0  
+Months_Inactive_12_mon                                           0  
+Contacts_Count_12_mon                                            0  
+Credit_Limit                                                     0  
+Total_Revolving_Bal                                              0  
+Avg_Open_To_Buy                                                  0  
+Total_Amt_Chng_Q4_Q1                                             0  
+Total_Trans_Amt                                                  0  
+Total_Trans_Ct                                                   0  
+Total_Ct_Chng_Q4_Q1                                              0  
+Avg_Utilization_Ratio                                            0  
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...               0  
+Naive_Bayes_Classifier_Attrition_Flag_Card_Cate...               0  
+
+CELL 7 stdout
+Unique customers: 10127
+Exact duplicated rows: 0
+Duplicate CLIENTNUM values beyond first: 0
+Attrition_Flag : ['Attrited Customer', 'Existing Customer']
+Gender : ['F', 'M']
+Education_Level : ['College', 'Doctorate', 'Graduate', 'High School', 'Post-Graduate', 'Uneducated', 'Unknown']
+Marital_Status : ['Divorced', 'Married', 'Single', 'Unknown']
+Income_Category : ['$120K +', '$40K - $60K', '$60K - $80K', '$80K - $120K', 'Less than $40K', 'Unknown']
+Card_Category : ['Blue', 'Gold', 'Platinum', 'Silver']
+
+
+CELL 7 TEXT
+                       field     min        max  invalid_n
+0               Customer_Age    26.0     73.000          0
+1            Dependent_count     0.0      5.000          0
+2             Months_on_book    13.0     56.000          0
+3   Total_Relationship_Count     1.0      6.000          0
+4     Months_Inactive_12_mon     0.0      6.000          0
+5      Contacts_Count_12_mon     0.0      6.000          0
+6               Credit_Limit  1438.3  34516.000          0
+7        Total_Revolving_Bal     0.0   2517.000          0
+8            Avg_Open_To_Buy     3.0  34516.000          0
+9       Total_Amt_Chng_Q4_Q1     0.0      3.397          0
+10           Total_Trans_Amt   510.0  18484.000          0
+11            Total_Trans_Ct    10.0    139.000          0
+12       Total_Ct_Chng_Q4_Q1     0.0      3.714          0
+13     Avg_Utilization_Ratio     0.0      0.999          0
+
+CELL 7 MARKDOWN
+**Integrity result:** No exact duplicate rows removed.
+
+CELL 7 MARKDOWN
+**Result:** 0 conventional missing cells; 3,380 explicit Unknown entries. Unknown categories are retained. No different customers are removed for identical predictor profiles.
+
+CELL 9 TEXT
+             n  percentage
+class                     
+Retained  8500   83.934038
+Churned   1627   16.065962
+
+CELL 9 TEXT
+          measure  historical_reference  actual  difference
+0     Source rows                 10127   10127           0
+1  Source columns                    23      23           0
+2        Retained                  8500    8500           0
+3         Churned                  1627    1627           0
+
+CELL 9 stdout
+Historical-reference differences: none
+
+
+CELL 9 TEXT
+<Figure size 660x440 with 1 Axes>
+
+CELL 9 MARKDOWN
+**Result:** 10,127 customers; churn share 16.07%; retained share 83.93%. Majority-class accuracy = 83.93%. Predict-all-retained churn recall = 0%; its high accuracy would not locate a single churner.
+
+CELL 11 TEXT
+    partition     n  churn_n  churn_prevalence
+0       Train  6076      976          0.160632
+1  Validation  2025      325          0.160494
+2        Test  2026      326          0.160908
+
+CELL 11 stdout
+Customer IDs are unique and disjoint across all three partitions.
+
+
+CELL 13 TEXT
+                         n  churn_count  churn_rate    ci_low   ci_high  \
+Transaction_quartile                                                      
+(9.999, 45.0]         1585          594    0.374763  0.351262  0.398870   
+(45.0, 67.0]          1485          297    0.200000  0.180441  0.221107   
+(67.0, 81.0]          1608           67    0.041667  0.032943  0.052575   
+(81.0, 139.0]         1398           18    0.012876  0.008160  0.020261   
+
+                      small_n  
+Transaction_quartile           
+(9.999, 45.0]           False  
+(45.0, 67.0]            False  
+(67.0, 81.0]            False  
+(81.0, 139.0]           False  
+
+CELL 13 TEXT
+<Figure size 880x440 with 1 Axes>
+
+CELL 13 MARKDOWN
+Observational training-set associations only. Customer mix, confounding, label timing, and correlated behaviors may explain differences; association does not establish causation. Groups with n < 30 are flagged; intervals are unadjusted Wilson 95% intervals.
+
+CELL 13 TEXT
+                           n  churn_count  churn_rate    ci_low   ci_high  \
+Months_Inactive_12_mon                                                      
+0                         14            8    0.571429  0.325903  0.786195   
+1                       1332           57    0.042793  0.033175  0.055040   
+2                       1994          317    0.158977  0.143585  0.175680   
+3                       2308          496    0.214905  0.198628  0.232129   
+4                        252           73    0.289683  0.237166  0.348515   
+5                        106           14    0.132075  0.080331  0.209555   
+6                         70           11    0.157143  0.090075  0.259885   
+
+                        small_n  
+Months_Inactive_12_mon           
+0                          True  
+1                         False  
+2                         False  
+3                         False  
+4                         False  
+5                         False  
+6                         False  
+
+CELL 13 TEXT
+<Figure size 880x440 with 1 Axes>
+
+CELL 13 MARKDOWN
+Observational training-set associations only. Customer mix, confounding, label timing, and correlated behaviors may explain differences; association does not establish causation. Groups with n < 30 are flagged; intervals are unadjusted Wilson 95% intervals.
+
+CELL 13 TEXT
+                             n  churn_count  churn_rate    ci_low   ci_high  \
+Total_Relationship_Count                                                      
+1                          527          136    0.258065  0.222550  0.297080   
+2                          732          213    0.290984  0.259238  0.324912   
+3                         1430          241    0.168531  0.150023  0.188816   
+4                         1135          136    0.119824  0.102201  0.140011   
+5                         1140          126    0.110526  0.093617  0.130052   
+6                         1112          124    0.111511  0.094331  0.131365   
+
+                          small_n  
+Total_Relationship_Count           
+1                           False  
+2                           False  
+3                           False  
+4                           False  
+5                           False  
+6                           False  
+
+CELL 13 TEXT
+<Figure size 880x440 with 1 Axes>
+
+CELL 13 MARKDOWN
+Observational training-set associations only. Customer mix, confounding, label timing, and correlated behaviors may explain differences; association does not establish causation. Groups with n < 30 are flagged; intervals are unadjusted Wilson 95% intervals.
+
+CELL 13 MARKDOWN
+**Result:** Lowest transaction-count band churn = 37.5%; highest band = 1.3%; difference = +36.2 percentage points. **Interpretation:** Lower activity is associated with higher attrition in these bands. **Business implication:** Treat engagement review as a candidate hypothesis, not a validated rescue rule.
+
+CELL 14 TEXT
+<Figure size 1650x1210 with 9 Axes>
+
+CELL 14 TEXT
+Churn                  retained_median  churned_median
+Total_Trans_Amt              4098.0000        2312.500
+Total_Ct_Chng_Q4_Q1             0.7220           0.533
+Total_Amt_Chng_Q4_Q1            0.7430           0.703
+Avg_Utilization_Ratio           0.2135           0.000
+Total_Revolving_Bal          1375.0000           0.000
+Credit_Limit                 4644.0000        4145.500
+Contacts_Count_12_mon           2.0000           3.000
+Months_on_book                 36.0000          36.000
+Customer_Age                   46.0000          46.000
+
+CELL 14 TEXT
+<Figure size 880x440 with 1 Axes>
+
+CELL 14 TEXT
+                  n  churn_count  churn_rate    ci_low   ci_high  small_n
+Card_Category                                                            
+Blue           5664          910    0.160664  0.151331  0.170457    False
+Gold             74           15    0.202703  0.126870  0.307880    False
+Platinum         11            3    0.272727  0.097459  0.565650     True
+Silver          327           48    0.146789  0.112536  0.189245    False
+
+CELL 14 TEXT
+                    n  churn_count  churn_rate    ci_low   ci_high  small_n
+Income_Category                                                            
+$120K +           439           74    0.168565  0.136454  0.206427    False
+$40K - $60K      1071          151    0.140990  0.121428  0.163118    False
+$60K - $80K       818          115    0.140587  0.118443  0.166091    False
+$80K - $120K      925          137    0.148108  0.126673  0.172454    False
+Less than $40K   2164          385    0.177911  0.162373  0.194591    False
+Unknown           659          114    0.172989  0.146027  0.203742    False
+
+CELL 14 TEXT
+                   n  churn_count  churn_rate    ci_low   ci_high  small_n
+Marital_Status                                                            
+Divorced         450           69    0.153333  0.122989  0.189547    False
+Married         2814          432    0.153518  0.140672  0.167309    False
+Single          2363          392    0.165891  0.151437  0.181429    False
+Unknown          449           83    0.184855  0.151676  0.223382    False
+
+CELL 14 TEXT
+                    n  churn_count  churn_rate    ci_low   ci_high  small_n
+Education_Level                                                            
+College           607           94    0.154860  0.128259  0.185802    False
+Doctorate         268           57    0.212687  0.167932  0.265561    False
+Graduate         1830          287    0.156831  0.140890  0.174209    False
+High School      1246          178    0.142857  0.124524  0.163386    False
+Post-Graduate     304           56    0.184211  0.144667  0.231635    False
+Uneducated        884          147    0.166290  0.143199  0.192268    False
+Unknown           937          157    0.167556  0.145010  0.192817    False
+
+CELL 14 TEXT
+           n  churn_count  churn_rate    ci_low   ci_high  small_n
+Gender                                                            
+F       3215          570    0.177294  0.164479  0.190879    False
+M       2861          406    0.141908  0.129601  0.155176    False
+
+CELL 14 TEXT
+<Figure size 1650x1430 with 6 Axes>
+
+CELL 14 MARKDOWN
+Observational training-set associations only. Customer mix, confounding, label timing, and correlated behaviors may explain differences; association does not establish causation. All displayed categorical rates must be read with their table counts and small-n flags.
+
+CELL 14 TEXT
+<Figure size 1320x1100 with 2 Axes>
+
+CELL 14 MARKDOWN
+**Interpretation:** Boxplots show within-class spread; the correlation matrix reveals overlapping predictor information. **Business implication:** Combine behavior and relationship context in a validated model; do not convert one cross-tab into an intervention rule. **Limitation:** No significance or causal claims are inferred from these exploratory plots.
+
+CELL 17 stdout
+Excluded: CLIENTNUM | customer key / group integrity only
+Excluded: Attrition_Flag | target or target-related source output
+Excluded: Churn | target or target-related source output
+Excluded: Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_1 | target or target-related source output
+Excluded: Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_2 | target or target-related source output
+
+
+CELL 17 TEXT
+                       field    dtype                    group  \
+2               Customer_Age    int64  Identity / demographics   
+3                     Gender      str  Identity / demographics   
+4            Dependent_count    int64  Identity / demographics   
+5            Education_Level      str  Identity / demographics   
+6             Marital_Status      str  Identity / demographics   
+7            Income_Category      str  Identity / demographics   
+8              Card_Category      str      Plan / relationship   
+9             Months_on_book    int64      Plan / relationship   
+10  Total_Relationship_Count    int64      Plan / relationship   
+11    Months_Inactive_12_mon    int64  Behavior / transactions   
+12     Contacts_Count_12_mon    int64        Service / contact   
+13              Credit_Limit  float64           Money / credit   
+14       Total_Revolving_Bal    int64           Money / credit   
+15           Avg_Open_To_Buy  float64           Money / credit   
+16      Total_Amt_Chng_Q4_Q1  float64  Behavior / transactions   
+17           Total_Trans_Amt    int64  Behavior / transactions   
+18            Total_Trans_Ct    int64  Behavior / transactions   
+19       Total_Ct_Chng_Q4_Q1  float64  Behavior / transactions   
+20     Avg_Utilization_Ratio  float64           Money / credit   
+
+                               meaning                        unit  \
+2                         Customer age                       years   
+3             Recorded gender category                    category   
+4                  Recorded dependents                       count   
+5                   Education category                    category   
+6              Marital-status category                    category   
+7              Income band as recorded             source category   
+8                            Card tier                    category   
+9               Length of relationship                      months   
+10         Products/relationships held                       count   
+11                     Inactive months                      months   
+12                   Recorded contacts                       count   
+13                        Credit limit        currency unspecified   
+14                   Revolving balance        currency unspecified   
+15          Average open-to-buy credit        currency unspecified   
+16  Amount change measure Q4 versus Q1  dimensionless source ratio   
+17            Total transaction amount        currency unspecified   
+18                   Transaction count                       count   
+19   Count change measure Q4 versus Q1  dimensionless source ratio   
+20                 Average utilization                       ratio   
+
+                                       window_or_note  
+2                        Measurement date unspecified  
+3                   Collection definition unspecified  
+4                        Measurement date unspecified  
+5                                 Unknown is explicit  
+6                                 Unknown is explicit  
+7                Currency/period unspecified in table  
+8                                            Snapshot  
+9                              As-of date unspecified  
+10                             As-of date unspecified  
+11    12-month label; calendar boundaries unspecified  
+12       12-month label; direction/reason unspecified  
+13                             As-of date unspecified  
+14                             As-of date unspecified  
+15                       Averaging window unspecified  
+16          Calendar year / exact formula unspecified  
+17  Exact cut-off and aggregation window unspecifi...  
+18  Exact cut-off and aggregation window unspecifi...  
+19          Calendar year / exact formula unspecified  
+20                       Averaging window unspecified  
+
+CELL 17 stdout
+Retained predictor count: 19
+
+
+CELL 19 TEXT
+  engineered_feature exact_duplicate_source_fields
+0     average_ticket                            []
+1      contact_ratio                            []
+
+CELL 19 TEXT
+                          average_ticket  contact_ratio
+Total_Trans_Amt                 0.905982       0.197453
+Total_Trans_Ct                  0.534976       0.091927
+Total_Relationship_Count        0.332408       0.658351
+Credit_Limit                    0.173039       0.059711
+Avg_Open_To_Buy                 0.169499       0.063643
+Avg_Utilization_Ratio           0.096408       0.080632
+Total_Ct_Chng_Q4_Q1             0.079060       0.085538
+Contacts_Count_12_mon           0.073845       0.498224
+Total_Amt_Chng_Q4_Q1            0.069613       0.059094
+Customer_Age                    0.039939       0.012358
+Total_Revolving_Bal             0.037310       0.044365
+Months_on_book                  0.029681       0.018018
+Dependent_count                 0.026288       0.007155
+Months_Inactive_12_mon          0.011418       0.002142
+
+CELL 19 stdout
+Numeric fields: ['Customer_Age', 'Dependent_count', 'Months_on_book', 'Total_Relationship_Count', 'Months_Inactive_12_mon', 'Contacts_Count_12_mon', 'Credit_Limit', 'Total_Revolving_Bal', 'Avg_Open_To_Buy', 'Total_Amt_Chng_Q4_Q1', 'Total_Trans_Amt', 'Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Avg_Utilization_Ratio', 'average_ticket', 'contact_ratio']
+Categorical fields: ['Gender', 'Education_Level', 'Marital_Status', 'Income_Category', 'Card_Category']
+
+
+CELL 19 TEXT
+                 count       mean        std        min        25%        50%  \
+average_ticket  6076.0  62.243942  25.801724  23.805556  47.510852  55.855641   
+contact_ratio   6076.0   0.818828   0.668252   0.000000   0.400000   0.666667   
+
+                      75%         max  
+average_ticket  65.257251  180.058824  
+contact_ratio    1.000000    6.000000  
+
+CELL 22 stdout
+Preprocessing is inside each estimator Pipeline; CV uses identical training-only folds.
+
+
+CELL 25 stdout
+Majority baseline: CV AP = 0.1606 ± 0.0002 (fold SD)
+Logistic Regression: CV AP = 0.7701 ± 0.0088 (fold SD)
+
+
+CELL 25 stdout
+Decision Tree: CV AP = 0.7561 ± 0.0151 (fold SD)
+
+
+CELL 25 stdout
+Random Forest baseline: CV AP = 0.9315 ± 0.0051 (fold SD)
+
+
+CELL 25 stdout
+XGBoost benchmark: CV AP = 0.9530 ± 0.0017 (fold SD)
+
+
+CELL 25 stdout
+LightGBM benchmark: CV AP = 0.9638 ± 0.0027 (fold SD)
+
+
+CELL 25 TEXT
+                    Model     CV_ap  CV_roc_auc  CV_recall     CV_f1  \
+5      LightGBM benchmark  0.963839    0.991836   0.919062  0.894420   
+4       XGBoost benchmark  0.953016    0.989004   0.844244  0.885033   
+3  Random Forest baseline  0.931457    0.985138   0.856574  0.865430   
+1     Logistic Regression  0.770088    0.934071   0.857593  0.667714   
+2           Decision Tree  0.756127    0.946302   0.909819  0.727848   
+0       Majority baseline  0.160632    0.500000   0.000000  0.000000   
+
+   CV_ap_std  Train_ap  
+5   0.002716  0.999278  
+4   0.001740  0.984720  
+3   0.005122  0.996372  
+1   0.008817  0.775886  
+2   0.015127  0.837446  
+0   0.000195  0.160632  
+
+CELL 28 TEXT
+                                               params  mean_test_score  \
+8   {'model__max_depth': None, 'model__max_feature...         0.942576   
+10  {'model__max_depth': None, 'model__max_feature...         0.939583   
+6   {'model__max_depth': 10, 'model__max_features'...         0.935720   
+11  {'model__max_depth': None, 'model__max_feature...         0.932599   
+7   {'model__max_depth': 10, 'model__max_features'...         0.932283   
+4   {'model__max_depth': 10, 'model__max_features'...         0.931457   
+9   {'model__max_depth': None, 'model__max_feature...         0.922420   
+5   {'model__max_depth': 10, 'model__max_features'...         0.922176   
+
+    std_test_score  mean_train_score  train_cv_gap  
+8         0.001707          0.999809      0.057233  
+10        0.004407          0.999591      0.060009  
+6         0.006246          0.996140      0.060421  
+11        0.003455          0.985433      0.052834  
+7         0.003563          0.984424      0.052141  
+4         0.005122          0.996372      0.064915  
+9         0.003261          0.982547      0.060128  
+5         0.004912          0.979889      0.057713  
+
+CELL 28 stdout
+Best forest parameters: {'model__max_depth': None, 'model__max_features': 'sqrt', 'model__min_samples_leaf': 2, 'model__n_estimators': 150}
+Best mean CV AP: 0.9425760403949496
+
+
+CELL 28 MARKDOWN
+**Forest variant locked using Train only:** Random Forest tuned. **Highest mean CV AP among evaluated recipes:** LightGBM benchmark. Validation will now apply the predeclared final-model rule; Test remains unopened.
+
+CELL 30 TEXT
+                    Model     CV_ap  CV_roc_auc  CV_recall     CV_f1  \
+5      LightGBM benchmark  0.963839    0.991836   0.919062  0.894420   
+4       XGBoost benchmark  0.953016    0.989004   0.844244  0.885033   
+6     Random Forest tuned  0.942576         NaN        NaN       NaN   
+3  Random Forest baseline  0.931457    0.985138   0.856574  0.865430   
+1     Logistic Regression  0.770088    0.934071   0.857593  0.667714   
+2           Decision Tree  0.756127    0.946302   0.909819  0.727848   
+0       Majority baseline  0.160632    0.500000   0.000000  0.000000   
+
+   CV_ap_std  Train_ap  Validation_AP  Validation_ROC_AUC  \
+5   0.002716  0.999278       0.967595            0.993184   
+4   0.001740  0.984720       0.954549            0.990460   
+6   0.001707  0.999809       0.943733            0.987405   
+3   0.005122  0.996372       0.936431            0.985783   
+1   0.008817  0.775886       0.803974            0.937689   
+2   0.015127  0.837446       0.781677            0.954209   
+0   0.000195  0.160632       0.160494            0.500000   
+
+   Validation_Brier_Score  Selected_primary  
+5                0.026384              True  
+4                0.026774             False  
+6                0.035340             False  
+3                0.040918             False  
+1                0.099024             False  
+2                0.082517             False  
+0                0.160494             False  
+
+CELL 30 TEXT
+                        encoded_feature  coefficient  odds_multiplier
+14              numeric__average_ticket     2.254864         9.533996
+11              numeric__Total_Trans_Ct    -1.693875         0.183806
+10             numeric__Total_Trans_Amt    -1.614956         0.198899
+17                categorical__Gender_M    -0.671743         0.510818
+12         numeric__Total_Ct_Chng_Q4_Q1    -0.664062         0.514756
+7          numeric__Total_Revolving_Bal    -0.630567         0.532290
+36      categorical__Card_Category_Gold     0.597887         1.818272
+35      categorical__Card_Category_Blue    -0.536415         0.584841
+4       numeric__Months_Inactive_12_mon     0.529402         1.697917
+38    categorical__Card_Category_Silver    -0.439372         0.644441
+26  categorical__Marital_Status_Married    -0.410451         0.663351
+5        numeric__Contacts_Count_12_mon     0.392694         1.480966
+
+CELL 30 MARKDOWN
+**Primary validation evidence:** AP 0.9676; ROC-AUC 0.9932. **Interpretation:** Higher ranking quality can focus reviews; it does not estimate how many customers treatment will save.
+
+CELL 30 MARKDOWN
+**Final model locked:** LightGBM benchmark. Validation AP leader among eligible candidates: LightGBM benchmark. Course forest competitive under the predeclared AP/Brier margins: False. TreeSHAP will explain Random Forest tuned; if different, its attributions must not be assigned to the final predictive model.
+
+CELL 32 TEXT
+<Figure size 1320x495 with 2 Axes>
+
+CELL 32 TEXT
+      threshold   TP    FP   FN    TN  precision    recall        F1  \
+0      0.000000  325  1700    0     0   0.160494  1.000000  0.276596   
+184    0.000754  325  1517    0   183   0.176439  1.000000  0.299954   
+368    0.001210  325  1333    0   367   0.196019  1.000000  0.327786   
+552    0.001769  325  1149    0   551   0.220488  1.000000  0.361312   
+737    0.002534  325   964    0   736   0.252133  1.000000  0.402726   
+921    0.003916  325   780    0   920   0.294118  1.000000  0.454545   
+1105   0.006731  325   596    0  1104   0.352877  1.000000  0.521669   
+1289   0.015416  325   412    0  1288   0.440977  1.000000  0.612053   
+1474   0.066995  324   228    1  1472   0.586957  0.996923  0.738883   
+1658   0.424736  307    61   18  1639   0.834239  0.944615  0.886003   
+1842   0.982024  181     3  144  1697   0.983696  0.556923  0.711198   
+2027   1.000000    0     0  325  1700   0.000000  0.000000  0.000000   
+
+      flagged_customers  flagged_percentage  decision_loss  
+0                  2025          100.000000           1700  
+184                1842           90.962963           1517  
+368                1658           81.876543           1333  
+552                1474           72.790123           1149  
+737                1289           63.654321            964  
+921                1105           54.567901            780  
+1105                921           45.481481            596  
+1289                737           36.395062            412  
+1474                552           27.259259            233  
+1658                368           18.172840            151  
+1842                184            9.086420            723  
+2027                  0            0.000000           1625  
+
+CELL 32 TEXT
+                     threshold     TP    FP    FN      TN  precision  \
+Selected policy       0.271024  317.0  95.0   8.0  1605.0   0.769417   
+0.50 reference only   0.500000  303.0  48.0  22.0  1652.0   0.863248   
+
+                       recall        F1  flagged_customers  \
+Selected policy      0.975385  0.860244              412.0   
+0.50 reference only  0.932308  0.896450              351.0   
+
+                     flagged_percentage  decision_loss  
+Selected policy               20.345679          135.0  
+0.50 reference only           17.333333          158.0  
+
+CELL 32 TEXT
+<Figure size 1320x495 with 2 Axes>
+
+CELL 32 MARKDOWN
+**Frozen decision rule:** Flag when LightGBM benchmark churn score ≥ 0.271024. Validation loss = 135 teaching units; 20.3% flagged. Precision = 76.9%; recall = 97.5%. Neither the fitted model nor threshold will change after Test is opened.
+
+CELL 34 TEXT
+                        metric        value
+0            Average Precision     0.971949
+1                      ROC-AUC     0.993049
+2                     Accuracy     0.949654
+3            Balanced Accuracy     0.956364
+4                    Precision     0.775862
+5                       Recall     0.966258
+6                           F1     0.860656
+7                  Brier Score     0.024355
+8   Illustrative decision loss   146.000000
+9             Frozen threshold     0.271024
+10                          TP   315.000000
+11                          FP    91.000000
+12                          FN    11.000000
+13                          TN  1609.000000
+
+CELL 34 TEXT
+<Figure size 660x550 with 1 Axes>
+
+CELL 34 TEXT
+<Figure size 1320x495 with 2 Axes>
+
+CELL 34 MARKDOWN
+**Result:** TP=315, FP=91, FN=11, TN=1609. Illustrative test loss = 146 units. **Interpretation:** 315 observed churners were identified, but the number who could be retained by contact remains unknown.
+
+CELL 36 TEXT
+                   ci_95_low  ci_95_high
+metric                                  
+Average Precision   0.959576    0.981384
+ROC-AUC             0.989694    0.995728
+Recall              0.945563    0.985299
+Precision           0.740321    0.812595
+
+CELL 36 stdout
+Valid bootstrap replicates: 500
+
+
+CELL 38 TEXT
+                         n  mean_predicted  observed_churn  \
+bin                                                          
+(-0.000794, 0.000843]  203        0.000574        0.000000   
+(0.000843, 0.00132]    203        0.001069        0.000000   
+(0.00132, 0.00197]     202        0.001618        0.000000   
+(0.00197, 0.00321]     203        0.002519        0.000000   
+(0.00321, 0.00537]     202        0.004183        0.000000   
+(0.00537, 0.0108]      203        0.007597        0.004926   
+(0.0108, 0.039]        202        0.020720        0.000000   
+(0.039, 0.274]         203        0.107423        0.049261   
+(0.274, 0.968]         202        0.701634        0.559406   
+(0.968, 0.999]         203        0.988999        0.995074   
+
+                       observed_minus_predicted  
+bin                                              
+(-0.000794, 0.000843]                 -0.000574  
+(0.000843, 0.00132]                   -0.001069  
+(0.00132, 0.00197]                    -0.001618  
+(0.00197, 0.00321]                    -0.002519  
+(0.00321, 0.00537]                    -0.004183  
+(0.00537, 0.0108]                     -0.002671  
+(0.0108, 0.039]                       -0.020720  
+(0.039, 0.274]                        -0.058162  
+(0.274, 0.968]                        -0.142228  
+(0.968, 0.999]                         0.006075  
+
+CELL 38 TEXT
+<Figure size 1320x495 with 2 Axes>
+
+CELL 38 MARKDOWN
+**Result:** Brier = 0.0244; Train-prevalence constant baseline = 0.1350. Mean predicted risk = 18.36%; observed Test churn = 16.09%. The model overpredicts mean observed churn by 2.27 percentage points in aggregate; local bin discrepancies can differ in direction.
+
+CELL 40 MARKDOWN
+**SHAP model:** Random Forest tuned. **Final predictive model:** LightGBM benchmark. These are different models. Forest scores are used only for explanation; no forest test outcome metrics or threshold comparison are computed.
+
+CELL 40 stdout
+SHAP reference: tree_path_dependent (tree path training counts)
+Positive class: 1 | max additivity error: 1.9317880628477724e-14
+
+
+CELL 41 TEXT
+                  transformed_feature            source_feature  \
+11            numeric__Total_Trans_Ct            Total_Trans_Ct   
+10           numeric__Total_Trans_Amt           Total_Trans_Amt   
+7        numeric__Total_Revolving_Bal       Total_Revolving_Bal   
+12       numeric__Total_Ct_Chng_Q4_Q1       Total_Ct_Chng_Q4_Q1   
+14            numeric__average_ticket            average_ticket   
+13     numeric__Avg_Utilization_Ratio     Avg_Utilization_Ratio   
+3   numeric__Total_Relationship_Count  Total_Relationship_Count   
+15             numeric__contact_ratio             contact_ratio   
+9       numeric__Total_Amt_Chng_Q4_Q1      Total_Amt_Chng_Q4_Q1   
+4     numeric__Months_Inactive_12_mon    Months_Inactive_12_mon   
+8            numeric__Avg_Open_To_Buy           Avg_Open_To_Buy   
+6               numeric__Credit_Limit              Credit_Limit   
+5      numeric__Contacts_Count_12_mon     Contacts_Count_12_mon   
+0               numeric__Customer_Age              Customer_Age   
+16              categorical__Gender_F                    Gender   
+
+    mean_absolute_shap  
+11            0.147118  
+10            0.091323  
+7             0.062069  
+12            0.047645  
+14            0.043360  
+13            0.039959  
+3             0.030996  
+15            0.029243  
+9             0.019938  
+4             0.018477  
+8             0.012738  
+6             0.010834  
+5             0.009865  
+0             0.007699  
+16            0.006369  
+
+CELL 41 TEXT
+              source_feature  mean_absolute_grouped_shap
+11            Total_Trans_Ct                    0.147118
+10           Total_Trans_Amt                    0.091323
+7        Total_Revolving_Bal                    0.062069
+12       Total_Ct_Chng_Q4_Q1                    0.047645
+14            average_ticket                    0.043360
+13     Avg_Utilization_Ratio                    0.039959
+3   Total_Relationship_Count                    0.030996
+15             contact_ratio                    0.029243
+9       Total_Amt_Chng_Q4_Q1                    0.019938
+4     Months_Inactive_12_mon                    0.018477
+8            Avg_Open_To_Buy                    0.012738
+16                    Gender                    0.012088
+
+CELL 41 TEXT
+<Figure size 880x825 with 2 Axes>
+
+CELL 41 TEXT
+<Figure size 990x660 with 1 Axes>
+
+CELL 41 MARKDOWN
+**Computed leading source attributions:** Total_Trans_Ct, Total_Trans_Amt, Total_Revolving_Bal, Total_Ct_Chng_Q4_Q1, average_ticket. **Interpretation:** Mean |SHAP| describes how strongly this fitted forest relies on an input. It is not causal importance, intervention value or profit ranking. Source aggregation sums signed dummy contributions per customer before taking absolute means; cancellation is possible and this is not a newly fitted grouped Shapley game.
+
+CELL 43 TEXT
+<Figure size 990x550 with 1 Axes>
+
+CELL 43 stdout
+Sample contributions above zero: 68 below zero: 132
+
+
+CELL 45 TEXT
+                          original_value
+Customer_Age                          42
+Gender                                 F
+Dependent_count                        3
+Education_Level              High School
+Marital_Status                    Single
+Income_Category           Less than $40K
+Card_Category                       Blue
+Months_on_book                        36
+Total_Relationship_Count               2
+Months_Inactive_12_mon                 3
+Contacts_Count_12_mon                  3
+Credit_Limit                      2145.0
+Total_Revolving_Bal                    0
+Avg_Open_To_Buy                   2145.0
+Total_Amt_Chng_Q4_Q1               0.577
+Total_Trans_Amt                     2465
+Total_Trans_Ct                        42
+Total_Ct_Chng_Q4_Q1                0.355
+Avg_Utilization_Ratio                0.0
+
+CELL 45 TEXT
+                engineered_value
+average_ticket         58.690476
+contact_ratio           1.500000
+
+CELL 45 TEXT
+               transformed_feature  SHAP_contribution
+11         numeric__Total_Trans_Ct           0.159158
+10        numeric__Total_Trans_Amt           0.116532
+12    numeric__Total_Ct_Chng_Q4_Q1           0.060836
+7     numeric__Total_Revolving_Bal           0.055091
+15          numeric__contact_ratio           0.034208
+13  numeric__Avg_Utilization_Ratio           0.033892
+
+CELL 45 TEXT
+                         transformed_feature  SHAP_contribution
+6                      numeric__Credit_Limit          -0.007323
+8                   numeric__Avg_Open_To_Buy          -0.007299
+14                   numeric__average_ticket          -0.006049
+9              numeric__Total_Amt_Chng_Q4_Q1          -0.004227
+21  categorical__Education_Level_High School          -0.004108
+28       categorical__Marital_Status_Unknown          -0.000218
+
+CELL 45 TEXT
+<Figure size 1320x880 with 3 Axes>
+
+CELL 45 MARKDOWN
+**Local reconstruction:** reference 0.4989 + total contribution +0.4987 = predicted churn probability 0.9976. Largest positive model evidence: numeric__Total_Trans_Ct, numeric__Total_Trans_Amt, numeric__Total_Ct_Chng_Q4_Q1. Largest negative model evidence: numeric__Credit_Limit, numeric__Avg_Open_To_Buy, numeric__average_ticket. No observed label was used to select this case.
+
+CELL 48 TEXT
+              field           group     n  churn_n  flagged_n  \
+0            Gender               F  1039      183        212   
+1            Gender               M   987      143        194   
+2     Card_Category            Blue  1878      306        380   
+3     Card_Category            Gold    20        1          2   
+4     Card_Category        Platinum     4        0          0   
+5     Card_Category          Silver   124       19         24   
+6   Income_Category         $120K +   160       29         37   
+7   Income_Category     $40K - $60K   360       65         80   
+8   Income_Category     $60K - $80K   282       27         50   
+9   Income_Category    $80K - $120K   323       54         61   
+10  Income_Category  Less than $40K   674      116        135   
+11  Income_Category         Unknown   227       35         43   
+12  Education_Level         College   204       27         34   
+13  Education_Level       Doctorate    98       20         26   
+14  Education_Level        Graduate   674      105        129   
+15  Education_Level     High School   392       71         93   
+16  Education_Level   Post-Graduate   100       19         22   
+17  Education_Level      Uneducated   291       38         49   
+18  Education_Level         Unknown   267       46         53   
+
+    churn_prevalence  average_predicted_risk  Brier_score    recall  \
+0           0.176131                0.191204     0.017153  0.983607   
+1           0.144883                0.175670     0.031936  0.944056   
+2           0.162939                0.184683     0.024948  0.964052   
+3           0.050000                0.092374     0.019908       NaN   
+4           0.000000                0.017672     0.000861       NaN   
+5           0.153226                0.187870     0.016847       NaN   
+6           0.181250                0.204186     0.021538  0.965517   
+7           0.180556                0.210662     0.029358  0.969231   
+8           0.095745                0.137520     0.039136  0.962963   
+9           0.167183                0.185251     0.025121  0.925926   
+10          0.172107                0.183300     0.020261  0.974138   
+11          0.154185                0.182286     0.011109  1.000000   
+12          0.132353                0.156080     0.020255  0.962963   
+13          0.204082                0.238295     0.030664       NaN   
+14          0.155786                0.174336     0.024241  0.952381   
+15          0.181122                0.215647     0.028888  1.000000   
+16          0.190000                0.196107     0.037266       NaN   
+17          0.130584                0.155898     0.014624  1.000000   
+18          0.172285                0.186674     0.024576  0.934783   
+
+    precision                                             status  
+0    0.849057                    descriptive comparison eligible  
+1    0.695876                    descriptive comparison eligible  
+2    0.776316                    descriptive comparison eligible  
+3         NaN  small group or insufficient outcome/flag count...  
+4         NaN  small group or insufficient outcome/flag count...  
+5         NaN  small group or insufficient outcome/flag count...  
+6    0.756757                    descriptive comparison eligible  
+7    0.787500                    descriptive comparison eligible  
+8    0.520000                    descriptive comparison eligible  
+9    0.819672                    descriptive comparison eligible  
+10   0.837037                    descriptive comparison eligible  
+11   0.813953                    descriptive comparison eligible  
+12   0.764706                    descriptive comparison eligible  
+13        NaN  small group or insufficient outcome/flag count...  
+14   0.775194                    descriptive comparison eligible  
+15   0.763441                    descriptive comparison eligible  
+16        NaN  small group or insufficient outcome/flag count...  
+17   0.775510                    descriptive comparison eligible  
+18   0.811321                    descriptive comparison eligible  
+
+CELL 48 MARKDOWN
+**Descriptive result:** Among 14 eligible subgroup slices, recall ranges from 92.6% to 100.0%. These overlapping, exploratory slices are model-risk signals, not a formal fairness verdict; no policy is retuned on this audit.
+
+CELL 50 TEXT
+                pattern                               training_evidence  \
+0  Transaction activity       Lowest vs highest quartile: 37.5% vs 1.3%   
+1            Inactivity   Adequate-n levels 1 vs 6: 4.3% vs 15.7% churn   
+2     Contact frequency   Adequate-n levels 0 vs 5: 1.6% vs 32.7% churn   
+3    Relationship depth  Adequate-n levels 1 vs 6: 25.8% vs 11.2% churn   
+
+                    candidate_hypothesis  \
+0       Reactivation / engagement review   
+1                  Service / usage check   
+2  Investigate possible service friction   
+3              Relationship needs review   
+
+                                          limitation  
+0  Association only; engagement intervention effe...  
+1  Observational association; confounding and tim...  
+2  Observational association; confounding and tim...  
+3  Observational association; confounding and tim...  
+
+CELL 50 MARKDOWN
+**Model cross-check:** Leading SHAP source fields are Total_Trans_Ct, Total_Trans_Amt, Total_Revolving_Bal, Total_Ct_Chng_Q4_Q1, average_ticket. These indicate model reliance only. Observational training-set associations only. Customer mix, confounding, label timing, and correlated behaviors may explain differences; association does not establish causation.
+
+CELL 54 TEXT
+                                 file   bytes
+0                calibration_bins.csv     831
+1                      cv_results.csv    5494
+2                 data_dictionary.csv    2833
+3                   final_metrics.csv     545
+4                model_comparison.csv    1411
+5               partition_summary.csv     146
+6            retention_hypotheses.csv     667
+7          shap_global_importance.csv    2781
+8          shap_source_importance.csv     834
+9                subgroup_metrics.csv    3080
+10               test_predictions.csv   50279
+11  validation_threshold_analysis.csv  218871
+
+CELL 54 stdout
+Figure files: 17
+Required exports verified: ['model_comparison.csv', 'validation_threshold_analysis.csv', 'test_predictions.csv', 'shap_global_importance.csv', 'final_metrics.csv']
+
+
+CELL 57 MARKDOWN
+
+### OBSERVED EVIDENCE
+**Business problem.** Churn is loss/disengagement under the source attrition label. A retention decision needs incremental retained value and intervention cost; a risk score alone is insufficient.
+
+**Analytical cohort:** 10,127 unique customer snapshots; 1,627 attrited (16.07%); majority-class accuracy 83.93%. Split sizes: Train 6,076, Validation 2,025, Test 2,026.
+
+**Training EDA:**
+- **Transaction activity:** Lowest vs highest quartile: 37.5% vs 1.3%.
+- **Inactivity:** Adequate-n levels 1 vs 6: 4.3% vs 15.7% churn.
+- **Contact frequency:** Adequate-n levels 0 vs 5: 1.6% vs 32.7% churn.
+- **Relationship depth:** Adequate-n levels 1 vs 6: 25.8% vs 11.2% churn.
+These are observational training-set associations, not intervention effects.
+
+**Model evidence:** Highest training-CV AP among evaluated recipes: **LightGBM benchmark**, 0.9638. Highest descriptive Validation AP: **LightGBM benchmark**, 0.9676. Selected final predictive model: **LightGBM benchmark**, CV AP 0.9638; Validation AP 0.9676, ROC-AUC 0.9932. Only this selected predictive model received final Test outcome evaluation. Course-aligned TreeSHAP model: **Random Forest tuned**. If these differ, the forest explanations do not explain the final model's predictions. No model is asserted to be the best possible classifier.
+
+**Frozen Test ranking:** AP **0.9719** (95% conditional bootstrap interval 0.9596–0.9814); ROC-AUC **0.9930** (0.9897–0.9957).
+
+**Frozen decision rule:** score ≥ **0.271024**; selected using Validation loss 5×FN + 1×FP. **Illustrative teaching costs, not verified company economics.** Test TP=315, FP=91, FN=11, TN=1609; precision 77.59%, recall 96.63%; test loss 146 teaching units.
+
+**Probability quality:** Brier 0.0244 versus 0.1350 for the Train-prevalence constant. The final predictive model overpredicts mean observed churn by 2.27 percentage points in aggregate. Reliability bins provide local context; no test recalibration was fitted.
+
+**Main SHAP drivers of Random Forest tuned:** Total_Trans_Ct, Total_Trans_Amt, Total_Revolving_Bal, Total_Ct_Chng_Q4_Q1, average_ticket. TreeSHAP reference: tree_path_dependent (tree path training counts); maximum local-additivity error 1.93e-14. These are forest model-reliance findings, not causal importance.
+
+### BUSINESS HYPOTHESES
+- Reactivation / engagement review.
+- Service / usage check.
+- Investigate possible service friction.
+- Relationship needs review.
+Validate account context and eligibility before contact. Risk × CLV remains conceptual because validated CLV is unavailable.
+
+### CAUSAL EVIDENCE STILL REQUIRED
+**Risk ≠ treatment effectiveness.** No treatment/control evidence identifies who can be saved or whether contact is profitable. Establish temporal feature/label definitions and prospectively validate the model, then run a preregistered randomized retention pilot. Measure intention-to-treat retention lift, confidence intervals, incremental retained customers and incremental net margin. Scale only when expected incremental value is positive and validated.
+
+**Monitor:** Data (quality/drift/coverage), Model (AP, recall/precision, calibration and subgroup stability), Business (randomized lift and net value), Operations (latency, capacity, eligibility and fairness/safety). Pause/reassess on validated harmful uplift, negative economics, guardrail failures or material drift outside the approved range.
+
+**Data limitation:** This dataset represents a historical customer snapshot. Because the label horizon and feature cut-off dates are unspecified, the analysis evaluates associations and out-of-sample classification within the available snapshot, but cannot establish true future-period predictive stability.
+
+**Predict → Value → Test → Monitor. Act only when expected incremental value is positive and validated.**

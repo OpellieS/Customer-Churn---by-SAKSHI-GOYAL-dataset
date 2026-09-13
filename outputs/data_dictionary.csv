@@ -1,0 +1,24 @@
+field,dtype,group,meaning,unit,window_or_note
+CLIENTNUM,int64,Identity / demographics,Customer identifier,identifier,Snapshot key
+Attrition_Flag,str,Target,Source attrition category,category,Outcome horizon unspecified
+Customer_Age,int64,Identity / demographics,Customer age,years,Measurement date unspecified
+Gender,str,Identity / demographics,Recorded gender category,category,Collection definition unspecified
+Dependent_count,int64,Identity / demographics,Recorded dependents,count,Measurement date unspecified
+Education_Level,str,Identity / demographics,Education category,category,Unknown is explicit
+Marital_Status,str,Identity / demographics,Marital-status category,category,Unknown is explicit
+Income_Category,str,Identity / demographics,Income band as recorded,source category,Currency/period unspecified in table
+Card_Category,str,Plan / relationship,Card tier,category,Snapshot
+Months_on_book,int64,Plan / relationship,Length of relationship,months,As-of date unspecified
+Total_Relationship_Count,int64,Plan / relationship,Products/relationships held,count,As-of date unspecified
+Months_Inactive_12_mon,int64,Behavior / transactions,Inactive months,months,12-month label; calendar boundaries unspecified
+Contacts_Count_12_mon,int64,Service / contact,Recorded contacts,count,12-month label; direction/reason unspecified
+Credit_Limit,float64,Money / credit,Credit limit,currency unspecified,As-of date unspecified
+Total_Revolving_Bal,int64,Money / credit,Revolving balance,currency unspecified,As-of date unspecified
+Avg_Open_To_Buy,float64,Money / credit,Average open-to-buy credit,currency unspecified,Averaging window unspecified
+Total_Amt_Chng_Q4_Q1,float64,Behavior / transactions,Amount change measure Q4 versus Q1,dimensionless source ratio,Calendar year / exact formula unspecified
+Total_Trans_Amt,int64,Behavior / transactions,Total transaction amount,currency unspecified,Exact cut-off and aggregation window unspecified in CSV
+Total_Trans_Ct,int64,Behavior / transactions,Transaction count,count,Exact cut-off and aggregation window unspecified in CSV
+Total_Ct_Chng_Q4_Q1,float64,Behavior / transactions,Count change measure Q4 versus Q1,dimensionless source ratio,Calendar year / exact formula unspecified
+Avg_Utilization_Ratio,float64,Money / credit,Average utilization,ratio,Averaging window unspecified
+Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_1,float64,Target-related source output,Source classifier output; exclude,probability-like score,Training origin unspecified
+Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_2,float64,Target-related source output,Source classifier output; exclude,probability-like score,Training origin unspecified

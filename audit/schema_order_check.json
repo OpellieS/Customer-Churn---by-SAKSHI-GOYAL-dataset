@@ -1,0 +1,6 @@
+{
+  "สถานการณ์": "สำเนาข้อมูลที่คง Attrition_Flag และ CLIENTNUM แต่ไม่มี Total_Trans_Ct",
+  "หลักฐาน": "เมื่อถึงคำสั่ง qcut ใน cell 13 จะเกิด KeyError ก่อน assert schema ใน cell 17",
+  "error": "'Total_Trans_Ct'",
+  "เกิดกับข้อมูลจริงรอบนี้": false
+}

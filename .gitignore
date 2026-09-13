@@ -1,0 +1,21 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.env.*
+*.log
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.swp
+*.swo
+*~
+
+# Download source data separately; preserve audit/ and analytical exports.
+**/kaggle/input/
+data/raw/
+BankChurners.csv
+credit-card-customers.zip

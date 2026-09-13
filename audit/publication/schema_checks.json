@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "rejected_before_eda": [
+    "missing required feature",
+    "non-numeric numeric feature"
+  ],
+  "scope": "Synthetic invalid-input tests; not empirical customer analysis"
+}

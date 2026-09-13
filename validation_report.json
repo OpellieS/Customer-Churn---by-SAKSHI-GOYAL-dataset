@@ -1,0 +1,80 @@
+{
+  "notebook_json_schema_valid": true,
+  "python_cells_syntax_valid": true,
+  "notebook_sha256": "460d7852dfe4d4b998d5b35ce5d2b14bdb1b25f0a009c37b20f91e0046bffed4",
+  "execution": {
+    "status": "passed",
+    "timestamp_utc": "2026-09-13T08:17:40.564864+00:00",
+    "total_notebook_cells": 57,
+    "executed_notebook_code_cells": 26,
+    "extra_inspection_cells": 1,
+    "execution_seconds": 23.13,
+    "fresh_kernel": true,
+    "warnings": [],
+    "execution_environment": "Local CPU; same Python environment as this command; temporary Kaggle directory mirror",
+    "path_changes_in_replay_only": [
+      "/kaggle/input to kaggle/input",
+      "/kaggle/working to kaggle/working"
+    ],
+    "published_notebook_paths": "Unchanged Kaggle absolute paths",
+    "notebook_sha256": "460d7852dfe4d4b998d5b35ce5d2b14bdb1b25f0a009c37b20f91e0046bffed4",
+    "limits": "Not run on hosted Kaggle; not a test of every dependency version or fallback branch"
+  },
+  "independent_metric_verification": {
+    "status": "passed",
+    "maximum_metric_difference": 1.1102230246251565e-16,
+    "thresholds_checked": 2028,
+    "validation_minimum_loss": 135,
+    "frozen_threshold": 0.271024392128117,
+    "bootstrap_replicates": 500,
+    "confidence_intervals_match": true,
+    "model_roles_consistent": true,
+    "source_customer_ids_in_predictions": false,
+    "historical_values_unchanged": true,
+    "final_model": "LightGBM benchmark",
+    "metrics": {
+      "Average Precision": 0.971949038858016,
+      "ROC-AUC": 0.9930494406351498,
+      "Accuracy": 0.9496544916090819,
+      "Balanced Accuracy": 0.9563641284734752,
+      "Precision": 0.7758620689655172,
+      "Recall": 0.9662576687116564,
+      "F1": 0.860655737704918,
+      "Brier Score": 0.024354960501739943,
+      "Illustrative decision loss": 146,
+      "Frozen threshold": 0.271024392128117,
+      "TP": 315,
+      "FP": 91,
+      "FN": 11,
+      "TN": 1609
+    }
+  },
+  "source_manifest": {
+    "versions": {
+      "python": "3.13.5",
+      "numpy": "2.4.2",
+      "pandas": "3.0.0",
+      "scikit-learn": "1.8.0",
+      "matplotlib": "3.10.8",
+      "seaborn": "0.13.2",
+      "shap": "0.52.0",
+      "xgboost": "3.4.1",
+      "lightgbm": "4.7.0"
+    },
+    "random_state": 42,
+    "source_file": "BankChurners.csv",
+    "source_sha256": "c91b525a2a6755a1b0b80dad1d0d008ca97ec4df34552c8f47ffa12b6184b779",
+    "source_rows": 10127,
+    "analytical_rows": 10127,
+    "primary_model": "LightGBM benchmark",
+    "course_forest": "Random Forest tuned",
+    "cv_leader": "LightGBM benchmark",
+    "frozen_threshold": 0.271024392128117,
+    "shap_reference": "tree_path_dependent (tree path training counts)",
+    "shap_max_additivity_error": 1.9317880628477724e-14,
+    "bootstrap_replicates": 500,
+    "scope": "Historical snapshot; no validated future churn horizon, causal uplift, CLV or ROI"
+  },
+  "current_verification_mode": "independent checks against recorded replay",
+  "scope": "Historical snapshot classification; no demonstrated future horizon, causal lift, survival or ROI"
+}

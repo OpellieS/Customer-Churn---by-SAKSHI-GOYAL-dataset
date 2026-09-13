@@ -1,0 +1,64 @@
+{
+  "best_forest_parameters": {
+    "model__max_depth": null,
+    "model__max_features": "sqrt",
+    "model__min_samples_leaf": 2,
+    "model__n_estimators": 150
+  },
+  "selected_validation_policy": {
+    "threshold": 0.271024392128117,
+    "TP": 317.0,
+    "FP": 95.0,
+    "FN": 8.0,
+    "TN": 1605.0,
+    "precision": 0.7694174757281553,
+    "recall": 0.9753846153846154,
+    "F1": 0.8602442333785617,
+    "flagged_customers": 412.0,
+    "flagged_percentage": 20.34567901234568,
+    "decision_loss": 135.0
+  },
+  "validation_policy_at_0_5": {
+    "threshold": 0.5,
+    "TP": 303,
+    "FP": 48,
+    "FN": 22,
+    "TN": 1652,
+    "precision": 0.8632478632478633,
+    "recall": 0.9323076923076923,
+    "F1": 0.8964497041420119,
+    "flagged_customers": 351,
+    "flagged_percentage": 17.333333333333336,
+    "decision_loss": 158
+  },
+  "validation_ap": 0.9675953229523568,
+  "validation_auc": 0.9931837104072399,
+  "mean_predicted_test": 0.1836367076884338,
+  "observed_test_churn": 0.16090819348469892,
+  "train_constant_brier": 0.13501682303993987,
+  "mean_calibration_gap": -0.022728514203734868,
+  "local_forest_probability": 0.9975724606640949,
+  "local_forest_base": 0.4988689534895673,
+  "local_shap_sum": 0.49870350717451156,
+  "numeric_features": {
+    "raw_predictors": 19,
+    "engineered_predictors": 2,
+    "numeric_after_engineering": 16,
+    "categorical": 5,
+    "transformed_columns": 39,
+    "ratio_nan_cells": 0,
+    "ratio_infinite_cells": 0,
+    "duplicated_source_feature_profiles": 0
+  },
+  "id_intersections": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "positive_class_index": 1,
+  "forest_classes": [
+    0,
+    1
+  ],
+  "max_additivity_error": 1.9317880628477724e-14
+}

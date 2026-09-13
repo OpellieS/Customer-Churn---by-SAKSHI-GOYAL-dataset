@@ -1,0 +1,106 @@
+--- historical-notebook-source
++++ final-notebook-source
+@@ -38,13 +38,13 @@
+ ```text
+ Raw customer snapshot
+         ↓
+-Data integrity audit
++Data integrity + required schema audit
++        ↓
++Train / Validation / Test
+         ↓
+ Training-only EDA
+         ↓
+ Leakage-safe feature engineering
+-        ↓
+-Train / Validation / Test
+         ↓
+ Fold-specific preprocessing
+         ↓
+@@ -60,7 +60,7 @@
+         ↓
+ Monitoring
+ ```
+-This conceptual diagram groups analytical stages. **Execution assigns Train/Validation/Test immediately after integrity checks, before EDA and feature inspection.** No fitted preprocessing occurs before splitting.
++**The diagram follows execution order:** assign Train/Validation/Test after integrity and schema checks, before training-only EDA. Feature engineering is row-local; fitted preprocessing occurs inside training folds.
+ 
+ **Kaggle setup:** Add [Credit Card Customers](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers/data), slug `sakshigoyal7/credit-card-customers`, through **Add Input**, then **Run All**. CPU is sufficient. CSV discovery is recursive under `/kaggle/input/`; outputs go to `/kaggle/working/`. No credentials or network downloads are required by this notebook. Optional boosting libraries are used only when installed. SHAP is required for the explanation deliverables and checked early.
+ 
+@@ -206,6 +206,25 @@
+ source_sha256 = hashlib.sha256(input_file.read_bytes()).hexdigest()
+ print("Source SHA-256:", source_sha256)
+ raw = pd.read_csv(input_file)
++
++REQUIRED_NUMERIC_FIELDS = ['Customer_Age', 'Dependent_count', 'Months_on_book', 'Total_Relationship_Count', 'Months_Inactive_12_mon', 'Contacts_Count_12_mon', 'Credit_Limit', 'Total_Revolving_Bal', 'Avg_Open_To_Buy', 'Total_Amt_Chng_Q4_Q1', 'Total_Trans_Amt', 'Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Avg_Utilization_Ratio']
++REQUIRED_CATEGORICAL_FIELDS = ['Gender', 'Education_Level', 'Marital_Status', 'Income_Category', 'Card_Category']
++
++def validate_source_schema(frame):
++    required = {"CLIENTNUM", "Attrition_Flag", *REQUIRED_NUMERIC_FIELDS, *REQUIRED_CATEGORICAL_FIELDS}
++    missing = sorted(required - set(frame.columns))
++    if missing:
++        raise ValueError(f"Missing required source columns before EDA: {missing}")
++    wrong_types = [field for field in REQUIRED_NUMERIC_FIELDS if not pd.api.types.is_numeric_dtype(frame[field])]
++    if wrong_types:
++        raise TypeError(f"Expected numeric source fields before EDA: {wrong_types}")
++    numeric_categories = [field for field in REQUIRED_CATEGORICAL_FIELDS if pd.api.types.is_numeric_dtype(frame[field])]
++    if numeric_categories:
++        raise TypeError(f"Expected categorical source fields before EDA: {numeric_categories}")
++
++validate_source_schema(raw)
++print("Required source columns and types verified before EDA.")
++
+ assert raw.columns.is_unique, "Duplicate column names require source correction."
+ assert "Churn" not in raw.columns, "Unexpected precomputed Churn column: inspect source before proceeding."
+ assert "CLIENTNUM" in raw.columns, "Customer key CLIENTNUM is required for group checks."
+@@ -904,6 +923,19 @@
+ mean_calibration_gap = float(actual_test.mean()-test_probability.mean())
+ calibration_direction = "underpredicts mean observed churn" if mean_calibration_gap > 0 else "overpredicts mean observed churn" if mean_calibration_gap < 0 else "matches mean observed churn"
+ report(f"**Result:** Brier = {test_metric_values['Brier Score']:.4f}; Train-prevalence constant baseline = {train_constant_brier:.4f}. Mean predicted risk = {test_probability.mean():.2%}; observed Test churn = {actual_test.mean():.2%}. The model {calibration_direction} by {abs(mean_calibration_gap)*100:.2f} percentage points in aggregate; local bin discrepancies can differ in direction.")
++
++# Descriptive bin summary only: it does not change the fitted model or decision threshold.
++largest_calibration_bin = calibration_table.loc[calibration_table["observed_minus_predicted"].abs().idxmax()]
++calibration_bin_summary = (
++    f"Largest absolute quantile-bin gap: n={int(largest_calibration_bin['n'])}, "
++    f"mean score={largest_calibration_bin['mean_predicted']:.2%}, "
++    f"observed churn={largest_calibration_bin['observed_churn']:.2%} "
++    f"(observed minus predicted={100*largest_calibration_bin['observed_minus_predicted']:+.2f} percentage points). "
++    "This is a bin average, not a pointwise calibration estimate. Ranking and the empirical teaching-cost "
++    "threshold have holdout evidence, but these scores are not validated probabilities for CLV/ROI calculations."
++)
++report(calibration_bin_summary)
++
+ 
+ ### Cell 39
+ ## 13. SHAP explainability — What drives the fitted forest?
+@@ -1024,6 +1056,13 @@
+     "transformed_feature": transformed_names, "source_feature": source_names,
+     "mean_absolute_shap": np.abs(global_values).mean(axis=0),
+ }).sort_values("mean_absolute_shap", ascending=False)
++
++shap_export_metadata = {"explained_model": course_forest_name, "explained_class": 1,
++                        "output_scale": "churn_probability", "reference_method": shap_reference_method,
++                        "source_sha256": source_sha256}
++for key, value in shap_export_metadata.items():
++    shap_global_importance[key] = value
++
+ shap_global_importance.to_csv(OUTPUT_DIR / "shap_global_importance.csv", index=False)
+ display(shap_global_importance.head(15))
+ grouped_values = pd.DataFrame(shap_values_positive, columns=source_names).T.groupby(level=0, sort=False).sum().T
+@@ -1031,6 +1070,8 @@
+     "source_feature": grouped_values.columns,
+     "mean_absolute_grouped_shap": np.abs(grouped_values.iloc[global_explain_rows]).mean(axis=0).to_numpy(),
+ }).sort_values("mean_absolute_grouped_shap", ascending=False)
++for key, value in shap_export_metadata.items():
++    source_importance[key] = value
+ source_importance.to_csv(OUTPUT_DIR / "shap_source_importance.csv", index=False)
+ display(source_importance.head(12))
+ summary_options = {"rng": RANDOM_STATE} if "rng" in inspect.signature(shap.summary_plot).parameters else {}
+@@ -1347,7 +1388,7 @@
+ 
+ **Frozen decision rule:** score ≥ **{frozen_threshold:.6f}**; selected using Validation loss 5×FN + 1×FP. **Illustrative teaching costs, not verified company economics.** Test TP={test_decision['TP']}, FP={test_decision['FP']}, FN={test_decision['FN']}, TN={test_decision['TN']}; precision {test_metric_values['Precision']:.2%}, recall {test_metric_values['Recall']:.2%}; test loss {test_decision['decision_loss']} teaching units.
+ 
+-**Probability quality:** Brier {test_metric_values['Brier Score']:.4f} versus {train_constant_brier:.4f} for the Train-prevalence constant. The final predictive model {calibration_direction} by {abs(mean_calibration_gap)*100:.2f} percentage points in aggregate. Reliability bins provide local context; no test recalibration was fitted.
++**Probability quality:** Brier {test_metric_values['Brier Score']:.4f} versus {train_constant_brier:.4f} for the Train-prevalence constant. The final predictive model {calibration_direction} by {abs(mean_calibration_gap)*100:.2f} percentage points in aggregate. Reliability bins provide local context; no test recalibration was fitted. {calibration_bin_summary}
+ 
+ **Main SHAP drivers of {course_forest_name}:** {', '.join(top_shap_drivers)}. TreeSHAP reference: {shap_reference_method}; maximum local-additivity error {shap_additivity_error:.2e}. These are forest model-reliance findings, not causal importance.
+ 

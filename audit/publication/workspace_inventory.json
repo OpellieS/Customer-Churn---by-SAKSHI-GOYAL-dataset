@@ -1,0 +1,705 @@
+{
+  "phase": "Before publication changes",
+  "files": [
+    {
+      "path": ".DS_Store",
+      "category": "Temporary / irrelevant files",
+      "bytes": 6148,
+      "decision": "exclude",
+      "sha256": "baa4004f781325f013b3c99347e8d43240e2476daa422de6f521b90d844a8027"
+    },
+    {
+      "path": "audit/audit_report_th.md",
+      "category": "Audit / verification evidence",
+      "bytes": 109487,
+      "decision": "include; preserve provenance",
+      "sha256": "f8275c0aee1aa1d0d5de95254908eb761a176a06e7636aecc91614bff39cce4c"
+    },
+    {
+      "path": "audit/cell_inventory.json",
+      "category": "Audit / verification evidence",
+      "bytes": 9890,
+      "decision": "include; preserve provenance",
+      "sha256": "e943b394a1350a4b442d74be0ca161754c46dd5376ffdf6c7c0f6f3faad6eb12"
+    },
+    {
+      "path": "audit/compatibility_checks.json",
+      "category": "Audit / verification evidence",
+      "bytes": 1396,
+      "decision": "include; preserve provenance",
+      "sha256": "e7ce63cc0b897413c883fb3544c0d82c013e4e5a92c4baec6aff63af124461cb"
+    },
+    {
+      "path": "audit/embedded_outputs.txt",
+      "category": "Audit / verification evidence",
+      "bytes": 76067,
+      "decision": "include; preserve provenance",
+      "sha256": "d0787aa748dfd1a7f4cc6005aa490833c0866eafd20ffbc1430857eb1380fdde"
+    },
+    {
+      "path": "audit/execution_verification.json",
+      "category": "Audit / verification evidence",
+      "bytes": 996,
+      "decision": "include; preserve provenance",
+      "sha256": "b0374f3a2119b3eaef088af68677d8f3bad1c4772ba8e74a41fc248f7014a767"
+    },
+    {
+      "path": "audit/independent_metric_checks.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 675,
+      "decision": "include; preserve provenance",
+      "sha256": "7d512d9edc06c75e927820b9c57e1d0bf2669cf3e0c042c2f79e51220a190065"
+    },
+    {
+      "path": "audit/independent_verification.json",
+      "category": "Audit / verification evidence",
+      "bytes": 790,
+      "decision": "include; preserve provenance",
+      "sha256": "4e1db071f89190b9ceb795d5c289559789c9505cab58867aaa2cc1dd799def85"
+    },
+    {
+      "path": "audit/notebook_cells.txt",
+      "category": "Audit / verification evidence",
+      "bytes": 106549,
+      "decision": "include; preserve provenance",
+      "sha256": "e0382797565b03a5e5f0a6a4931eec2eb1819580dae0a6e95241cd48a16c8251"
+    },
+    {
+      "path": "audit/output_file_checks.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 635,
+      "decision": "include; preserve provenance",
+      "sha256": "f812f274819be5898e39e541024051db839f75642795f59db98c7e5da857bd7f"
+    },
+    {
+      "path": "audit/runtime/audit_execution.ipynb",
+      "category": "Audit / verification evidence",
+      "bytes": 1792022,
+      "decision": "include; preserve provenance",
+      "sha256": "d3b184e0eee7ecb9282811609b60053d76564b805fed0047da6c828f593d38fe"
+    },
+    {
+      "path": "audit/runtime/audit_exports/bootstrap_intervals.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 221,
+      "decision": "include; preserve provenance",
+      "sha256": "604c2278c56179953a9ac2bb2503dc55faeb6a4108823e59f2c42b81509ded4a"
+    },
+    {
+      "path": "audit/runtime/audit_exports/contact_segments.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 558,
+      "decision": "include; preserve provenance",
+      "sha256": "a2321a4f90c87dc5a49f0de10a602e8f86eebf63f96470c6c9039fe4ff827d55"
+    },
+    {
+      "path": "audit/runtime/audit_exports/eda_Card_Category.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 373,
+      "decision": "include; preserve provenance",
+      "sha256": "66bf7ba2b5bc17d9c98e8ac8fa47fa7403e597eed62b2f10b1aac8f9847da53b"
+    },
+    {
+      "path": "audit/runtime/audit_exports/eda_Education_Level.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 648,
+      "decision": "include; preserve provenance",
+      "sha256": "f5dec6eb9b7395a2eadb5b65003f015d1d67c38d42d184a4216b8aec1cb4fae9"
+    },
+    {
+      "path": "audit/runtime/audit_exports/eda_Gender.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 209,
+      "decision": "include; preserve provenance",
+      "sha256": "e024d2bca431e590573db0a2fa47848810cbb55441ccdaaa381874ebb6026ef5"
+    },
+    {
+      "path": "audit/runtime/audit_exports/eda_Income_Category.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 575,
+      "decision": "include; preserve provenance",
+      "sha256": "57066c09c398fea0ad98ff0b579f7c7e374a18fafb8403e6026430b29408e1a1"
+    },
+    {
+      "path": "audit/runtime/audit_exports/eda_Marital_Status.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 386,
+      "decision": "include; preserve provenance",
+      "sha256": "92bf1065dd6a11e6e7721111fd85b607b44ded181b1657fd764f7d54820c02fd"
+    },
+    {
+      "path": "audit/runtime/audit_exports/feature_correlations.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 5619,
+      "decision": "include; preserve provenance",
+      "sha256": "9509ef6560f629519370ccae6aaee3841382b3780b38c9f75d414ee2a8460fc6"
+    },
+    {
+      "path": "audit/runtime/audit_exports/inactivity_segments.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 590,
+      "decision": "include; preserve provenance",
+      "sha256": "1cbf4229395141e27e6fea7a10dca15d7333f0164e8849dc78aa00d35801c95e"
+    },
+    {
+      "path": "audit/runtime/audit_exports/inspection.json",
+      "category": "Audit / verification evidence",
+      "bytes": 1732,
+      "decision": "include; preserve provenance",
+      "sha256": "4c74dbc4566274d18215fa75d8e55e7afcb8feec54164afe7ab554733ef49b78"
+    },
+    {
+      "path": "audit/runtime/audit_exports/local_customer.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 436,
+      "decision": "include; preserve provenance",
+      "sha256": "cebb58e376dd59a21452aa9040596e4cfbe716254034b2a7fd8ab2ce349cd4e0"
+    },
+    {
+      "path": "audit/runtime/audit_exports/local_shap_grouped.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 803,
+      "decision": "include; preserve provenance",
+      "sha256": "4d3b9ded798fc0ba7e993d11eed0fcb99f060cd74cc4dc4df2313f580c0cadb5"
+    },
+    {
+      "path": "audit/runtime/audit_exports/local_shap_transformed.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 2169,
+      "decision": "include; preserve provenance",
+      "sha256": "b82376125fb2b49397902bd95996976d73033e4a9972e5ddaf32840b331e034c"
+    },
+    {
+      "path": "audit/runtime/audit_exports/logistic_table.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 2941,
+      "decision": "include; preserve provenance",
+      "sha256": "dbf1a184e0766df1ef9573f2dbc2b09480be3add6111af0ba98e4546f23f8605"
+    },
+    {
+      "path": "audit/runtime/audit_exports/numeric_eda.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 1193,
+      "decision": "include; preserve provenance",
+      "sha256": "8604bf6116ba88c6619193f03be1713393c865159f142da7e2cf56a41e8bfc72"
+    },
+    {
+      "path": "audit/runtime/audit_exports/quality.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 907,
+      "decision": "include; preserve provenance",
+      "sha256": "7e150a9972b6847f66e4557563c6a53190f01674d2538ce4be7fd0841b1c3329"
+    },
+    {
+      "path": "audit/runtime/audit_exports/range_audit.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 487,
+      "decision": "include; preserve provenance",
+      "sha256": "88ad905b7ed99a787536c10befe038a22bff9c283e7dd1dc4d589c276c41bc5d"
+    },
+    {
+      "path": "audit/runtime/audit_exports/relationship_segments.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 529,
+      "decision": "include; preserve provenance",
+      "sha256": "228ea6374f51628abff9716c125cfcf6a3e976b0cddbbd1bc41d41954ef04829"
+    },
+    {
+      "path": "audit/runtime/audit_exports/shap_dependence.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 4745,
+      "decision": "include; preserve provenance",
+      "sha256": "b78d1920d041fe08682cf600a043e66cd2f67c114b2abf752acc5cb79f04f9bc"
+    },
+    {
+      "path": "audit/runtime/audit_exports/transaction_segments.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 416,
+      "decision": "include; preserve provenance",
+      "sha256": "93db9418ebed83283a4eab13cd391a2b61f197724cd0c5141369415ca3fcc7bc"
+    },
+    {
+      "path": "audit/runtime/audit_exports/validation_candidate_probabilities.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 212868,
+      "decision": "include; preserve provenance",
+      "sha256": "b7f45400f9c657c1cee819aa9fd75530a1f3440bfb8ffa57fb15fece6d86be26"
+    },
+    {
+      "path": "audit/runtime/audit_exports/validation_predictions.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 46118,
+      "decision": "include; preserve provenance",
+      "sha256": "6ee1cec0554df3afd6273140ad6f0731a2330a41bf19e63f5b18a46fc7d95583"
+    },
+    {
+      "path": "audit/runtime/kaggle/input/credit-card-customers/BankChurners.csv",
+      "category": "Sensitive or unsuitable files",
+      "bytes": 1510880,
+      "decision": "exclude source dataset/private environment",
+      "sha256": "c91b525a2a6755a1b0b80dad1d0d008ca97ec4df34552c8f47ffa12b6184b779"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/calibration_bins.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 831,
+      "decision": "include; preserve provenance",
+      "sha256": "5f4ac765cfddfd8cd3ad4de3b14b1568f8991e6d9dd32574a178994d37f48e46"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/cv_results.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 5490,
+      "decision": "include; preserve provenance",
+      "sha256": "cd4e0f36bc058901d7ae57017243bf7e016877e2076d7001ed90188126baa583"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/data_dictionary.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 2833,
+      "decision": "include; preserve provenance",
+      "sha256": "437bfefda9a067de7f7073f119f3fc7545ee6a6faac09684dffe0ffbf4af4538"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/eda_categorical_rates.png",
+      "category": "Figures",
+      "bytes": 233574,
+      "decision": "include",
+      "sha256": "9e98fcbe14acc42744a2a3e68692c54319d4a1745efa54f50a6afe833e1bfa42"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/eda_inactivity.png",
+      "category": "Figures",
+      "bytes": 42519,
+      "decision": "include",
+      "sha256": "ae63992add976b5f257e06ce510b21a3f25900d9d7bcd08a47ee4be1fd832985"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/eda_numeric_boxplots.png",
+      "category": "Figures",
+      "bytes": 204464,
+      "decision": "include",
+      "sha256": "f77e67b6e24b3d89db3f030e8e2c1fa340be027fbb12502f511c0d885bed10ce"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/eda_numeric_correlations.png",
+      "category": "Figures",
+      "bytes": 156615,
+      "decision": "include",
+      "sha256": "bd0594d34c5d2fb3cec2ce348525e8ead28b207745ff546dc6f1aae9ab55b0e7"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/eda_relationship_depth.png",
+      "category": "Figures",
+      "bytes": 41891,
+      "decision": "include",
+      "sha256": "8ea0b85b20bbaff9d7f506cf035180135f3b817a53d30dd8a8df5ec277ee617e"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/eda_transaction_distribution.png",
+      "category": "Figures",
+      "bytes": 54224,
+      "decision": "include",
+      "sha256": "c6c8d7a6c00ef9c7b17e38641d603cedf0cc1ab82692417c03bee6021026d3d3"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/eda_transaction_quartiles.png",
+      "category": "Figures",
+      "bytes": 49870,
+      "decision": "include",
+      "sha256": "4fc6de94daf7be9fd45e6e909a98dfb7ca6b1de1c0ffc05c826cb35fb5679ee0"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/shap_beeswarm.png",
+      "category": "Figures",
+      "bytes": 216195,
+      "decision": "include",
+      "sha256": "057e554b632a8bc918f3cd4f95c552ae0b04ddedaf5e072b26a8daa0bb553477"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/shap_local_waterfall.png",
+      "category": "Figures",
+      "bytes": 151565,
+      "decision": "include",
+      "sha256": "3cb04e70416d85a7159e718460c35df359f90408528e24eaff276387785c5004"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/shap_source_importance.png",
+      "category": "Figures",
+      "bytes": 81637,
+      "decision": "include",
+      "sha256": "25be52a147ee637c77eb99ef381431cf43588895b32cfea30d4aacc1c1910b07"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/shap_transaction_dependence.png",
+      "category": "Figures",
+      "bytes": 83466,
+      "decision": "include",
+      "sha256": "bbd1d124b62c745f69314cc95f251c9b47e04f03bc1810d43f7374e8d956a974"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/target_counts.png",
+      "category": "Figures",
+      "bytes": 39005,
+      "decision": "include",
+      "sha256": "3e12ce2e06a478d7657b4837f1a172ed01d930afaf0137f530eb7afbe1419052"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/test_calibration.png",
+      "category": "Figures",
+      "bytes": 97959,
+      "decision": "include",
+      "sha256": "e3d4576e737cb4519bff1de56410c2ba9e9e72df4a77c41c57e08ed6925f7181"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/test_confusion_matrix.png",
+      "category": "Figures",
+      "bytes": 32632,
+      "decision": "include",
+      "sha256": "bd16fcc207221444c86cad94d6ac6b2a956ff1981fc51db713647750d489a822"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/test_ranking.png",
+      "category": "Figures",
+      "bytes": 82048,
+      "decision": "include",
+      "sha256": "c2d36909623dd05edc91d12cf0dca4bfd5f7a85dc558fe315dae4fec2aeb003a"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/validation_ranking.png",
+      "category": "Figures",
+      "bytes": 82578,
+      "decision": "include",
+      "sha256": "fa96ca7a0b638c3ffa0d0484a6b981d64bcb973f06d3034c3ecc47ab15fc9f6f"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/figures/validation_threshold_policy.png",
+      "category": "Figures",
+      "bytes": 101054,
+      "decision": "include",
+      "sha256": "a38572281c415a8b80615f0be046f13cc06f0334260e36664cd289712d3b5e78"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/final_metrics.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 545,
+      "decision": "include; preserve provenance",
+      "sha256": "e6dc957547df5c8bfb91b49becdd0a8844373a630941bd77f7b2736956d17c6f"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/frozen_policy.json",
+      "category": "Audit / verification evidence",
+      "bytes": 308,
+      "decision": "include; preserve provenance",
+      "sha256": "33786060c36cc3e9f9ea3a740cd9f8464ce0b60aa5687d1e1598a9a0028ddbba"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/model_comparison.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 1411,
+      "decision": "include; preserve provenance",
+      "sha256": "70ea1ba90fffe8f4f909d41e4f721deae7d2951ab80e6fa207726f43289c9f82"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/partition_summary.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 146,
+      "decision": "include; preserve provenance",
+      "sha256": "795f3749fb588426aa035f4fa955642a36f14233c7bb6179574c24bdc1b0c7b3"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/retention_hypotheses.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 667,
+      "decision": "include; preserve provenance",
+      "sha256": "20a890629babf7b16a695e16356474547629572372c98dfd1fa6b081c5444efb"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/run_manifest.json",
+      "category": "Audit / verification evidence",
+      "bytes": 856,
+      "decision": "include; preserve provenance",
+      "sha256": "f7433b0310feedeadacd6184b079d75f0b102f17305c0a2b369fee6e784bfbd7"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/shap_global_importance.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 2781,
+      "decision": "include; preserve provenance",
+      "sha256": "39566d3cac81d825f20cd1c809571f64e2f0b9a7342a6e78cd32c80d4705c861"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/shap_source_importance.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 834,
+      "decision": "include; preserve provenance",
+      "sha256": "ef7bfb663dadae98b13cf356985f6efd74f474a08837b5e18c9cd08ad2a7cb5d"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/subgroup_metrics.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 3080,
+      "decision": "include; preserve provenance",
+      "sha256": "ad992fa187e76a6cb7cefc5f6da7489022ba74b1b6396d1e317afd7eacf1cf94"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/test_predictions.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 50279,
+      "decision": "include; preserve provenance",
+      "sha256": "6fe2c16b5f33fc55a8318013f6d5e1588e7d060e3ee7062f483076b804320926"
+    },
+    {
+      "path": "audit/runtime/kaggle/working/validation_threshold_analysis.csv",
+      "category": "Audit / verification evidence",
+      "bytes": 218871,
+      "decision": "include; preserve provenance",
+      "sha256": "d87f0e26cb2444db57c98ca6d84c85b1d8abdb269be5307c25f54ebf79d62d2a"
+    },
+    {
+      "path": "audit/schema_order_check.json",
+      "category": "Audit / verification evidence",
+      "bytes": 438,
+      "decision": "include; preserve provenance",
+      "sha256": "f53da4524fec8466248218acbeab6003ea294a412d91efffc4efcd6a4ec3fdbd"
+    },
+    {
+      "path": "notebook.ipynb",
+      "category": "Core analysis",
+      "bytes": 1780850,
+      "decision": "include",
+      "sha256": "323c968b6aa1ad3874c7fb916b069626aa250b3c315af76a8682a0ca831389d4"
+    },
+    {
+      "path": "outputs/calibration_bins.csv",
+      "category": "Model outputs",
+      "bytes": 831,
+      "decision": "include",
+      "sha256": "5f4ac765cfddfd8cd3ad4de3b14b1568f8991e6d9dd32574a178994d37f48e46"
+    },
+    {
+      "path": "outputs/cv_results.csv",
+      "category": "Model outputs",
+      "bytes": 5494,
+      "decision": "include",
+      "sha256": "040846923a3cb4b57b56ae016059ac5e505a0ca9c8cc3119a1dc5515218b0e94"
+    },
+    {
+      "path": "outputs/data_dictionary.csv",
+      "category": "Model outputs",
+      "bytes": 2833,
+      "decision": "include",
+      "sha256": "437bfefda9a067de7f7073f119f3fc7545ee6a6faac09684dffe0ffbf4af4538"
+    },
+    {
+      "path": "outputs/figures/eda_categorical_rates.png",
+      "category": "Figures",
+      "bytes": 233574,
+      "decision": "include",
+      "sha256": "9e98fcbe14acc42744a2a3e68692c54319d4a1745efa54f50a6afe833e1bfa42"
+    },
+    {
+      "path": "outputs/figures/eda_inactivity.png",
+      "category": "Figures",
+      "bytes": 42519,
+      "decision": "include",
+      "sha256": "ae63992add976b5f257e06ce510b21a3f25900d9d7bcd08a47ee4be1fd832985"
+    },
+    {
+      "path": "outputs/figures/eda_numeric_boxplots.png",
+      "category": "Figures",
+      "bytes": 204464,
+      "decision": "include",
+      "sha256": "f77e67b6e24b3d89db3f030e8e2c1fa340be027fbb12502f511c0d885bed10ce"
+    },
+    {
+      "path": "outputs/figures/eda_numeric_correlations.png",
+      "category": "Figures",
+      "bytes": 156615,
+      "decision": "include",
+      "sha256": "bd0594d34c5d2fb3cec2ce348525e8ead28b207745ff546dc6f1aae9ab55b0e7"
+    },
+    {
+      "path": "outputs/figures/eda_relationship_depth.png",
+      "category": "Figures",
+      "bytes": 41891,
+      "decision": "include",
+      "sha256": "8ea0b85b20bbaff9d7f506cf035180135f3b817a53d30dd8a8df5ec277ee617e"
+    },
+    {
+      "path": "outputs/figures/eda_transaction_distribution.png",
+      "category": "Figures",
+      "bytes": 54224,
+      "decision": "include",
+      "sha256": "c6c8d7a6c00ef9c7b17e38641d603cedf0cc1ab82692417c03bee6021026d3d3"
+    },
+    {
+      "path": "outputs/figures/eda_transaction_quartiles.png",
+      "category": "Figures",
+      "bytes": 49870,
+      "decision": "include",
+      "sha256": "4fc6de94daf7be9fd45e6e909a98dfb7ca6b1de1c0ffc05c826cb35fb5679ee0"
+    },
+    {
+      "path": "outputs/figures/shap_beeswarm.png",
+      "category": "Figures",
+      "bytes": 216195,
+      "decision": "include",
+      "sha256": "057e554b632a8bc918f3cd4f95c552ae0b04ddedaf5e072b26a8daa0bb553477"
+    },
+    {
+      "path": "outputs/figures/shap_local_waterfall.png",
+      "category": "Figures",
+      "bytes": 151565,
+      "decision": "include",
+      "sha256": "3cb04e70416d85a7159e718460c35df359f90408528e24eaff276387785c5004"
+    },
+    {
+      "path": "outputs/figures/shap_source_importance.png",
+      "category": "Figures",
+      "bytes": 81637,
+      "decision": "include",
+      "sha256": "25be52a147ee637c77eb99ef381431cf43588895b32cfea30d4aacc1c1910b07"
+    },
+    {
+      "path": "outputs/figures/shap_transaction_dependence.png",
+      "category": "Figures",
+      "bytes": 83466,
+      "decision": "include",
+      "sha256": "bbd1d124b62c745f69314cc95f251c9b47e04f03bc1810d43f7374e8d956a974"
+    },
+    {
+      "path": "outputs/figures/target_counts.png",
+      "category": "Figures",
+      "bytes": 39005,
+      "decision": "include",
+      "sha256": "3e12ce2e06a478d7657b4837f1a172ed01d930afaf0137f530eb7afbe1419052"
+    },
+    {
+      "path": "outputs/figures/test_calibration.png",
+      "category": "Figures",
+      "bytes": 97959,
+      "decision": "include",
+      "sha256": "e3d4576e737cb4519bff1de56410c2ba9e9e72df4a77c41c57e08ed6925f7181"
+    },
+    {
+      "path": "outputs/figures/test_confusion_matrix.png",
+      "category": "Figures",
+      "bytes": 32632,
+      "decision": "include",
+      "sha256": "bd16fcc207221444c86cad94d6ac6b2a956ff1981fc51db713647750d489a822"
+    },
+    {
+      "path": "outputs/figures/test_ranking.png",
+      "category": "Figures",
+      "bytes": 82048,
+      "decision": "include",
+      "sha256": "c2d36909623dd05edc91d12cf0dca4bfd5f7a85dc558fe315dae4fec2aeb003a"
+    },
+    {
+      "path": "outputs/figures/validation_ranking.png",
+      "category": "Figures",
+      "bytes": 82578,
+      "decision": "include",
+      "sha256": "fa96ca7a0b638c3ffa0d0484a6b981d64bcb973f06d3034c3ecc47ab15fc9f6f"
+    },
+    {
+      "path": "outputs/figures/validation_threshold_policy.png",
+      "category": "Figures",
+      "bytes": 101054,
+      "decision": "include",
+      "sha256": "a38572281c415a8b80615f0be046f13cc06f0334260e36664cd289712d3b5e78"
+    },
+    {
+      "path": "outputs/final_metrics.csv",
+      "category": "Model outputs",
+      "bytes": 545,
+      "decision": "include",
+      "sha256": "e6dc957547df5c8bfb91b49becdd0a8844373a630941bd77f7b2736956d17c6f"
+    },
+    {
+      "path": "outputs/frozen_policy.json",
+      "category": "Model outputs",
+      "bytes": 308,
+      "decision": "include",
+      "sha256": "33786060c36cc3e9f9ea3a740cd9f8464ce0b60aa5687d1e1598a9a0028ddbba"
+    },
+    {
+      "path": "outputs/model_comparison.csv",
+      "category": "Model outputs",
+      "bytes": 1411,
+      "decision": "include",
+      "sha256": "70ea1ba90fffe8f4f909d41e4f721deae7d2951ab80e6fa207726f43289c9f82"
+    },
+    {
+      "path": "outputs/partition_summary.csv",
+      "category": "Model outputs",
+      "bytes": 146,
+      "decision": "include",
+      "sha256": "795f3749fb588426aa035f4fa955642a36f14233c7bb6179574c24bdc1b0c7b3"
+    },
+    {
+      "path": "outputs/retention_hypotheses.csv",
+      "category": "Model outputs",
+      "bytes": 667,
+      "decision": "include",
+      "sha256": "20a890629babf7b16a695e16356474547629572372c98dfd1fa6b081c5444efb"
+    },
+    {
+      "path": "outputs/run_manifest.json",
+      "category": "Model outputs",
+      "bytes": 856,
+      "decision": "include",
+      "sha256": "f7433b0310feedeadacd6184b079d75f0b102f17305c0a2b369fee6e784bfbd7"
+    },
+    {
+      "path": "outputs/shap_global_importance.csv",
+      "category": "Model outputs",
+      "bytes": 2781,
+      "decision": "include",
+      "sha256": "39566d3cac81d825f20cd1c809571f64e2f0b9a7342a6e78cd32c80d4705c861"
+    },
+    {
+      "path": "outputs/shap_source_importance.csv",
+      "category": "Model outputs",
+      "bytes": 834,
+      "decision": "include",
+      "sha256": "ef7bfb663dadae98b13cf356985f6efd74f474a08837b5e18c9cd08ad2a7cb5d"
+    },
+    {
+      "path": "outputs/subgroup_metrics.csv",
+      "category": "Model outputs",
+      "bytes": 3080,
+      "decision": "include",
+      "sha256": "ad992fa187e76a6cb7cefc5f6da7489022ba74b1b6396d1e317afd7eacf1cf94"
+    },
+    {
+      "path": "outputs/test_predictions.csv",
+      "category": "Model outputs",
+      "bytes": 50279,
+      "decision": "include",
+      "sha256": "6fe2c16b5f33fc55a8318013f6d5e1588e7d060e3ee7062f483076b804320926"
+    },
+    {
+      "path": "outputs/validation_threshold_analysis.csv",
+      "category": "Model outputs",
+      "bytes": 218871,
+      "decision": "include",
+      "sha256": "d87f0e26cb2444db57c98ca6d84c85b1d8abdb269be5307c25f54ebf79d62d2a"
+    },
+    {
+      "path": "results.zip",
+      "category": "Model outputs",
+      "bytes": 1698017,
+      "decision": "include",
+      "sha256": "3b1cf00389650c62e875f2e053c096b712f2487928b3f28ff2071d943430dd92"
+    },
+    {
+      "path": "validation_report.json",
+      "category": "Audit / verification evidence",
+      "bytes": 966,
+      "decision": "include",
+      "sha256": "8b1b54557ec9d4c807060237d5e65ed1b9baa1175ad8d632b9d7035d1d51a5bb"
+    }
+  ]
+}

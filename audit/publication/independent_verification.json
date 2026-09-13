@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "maximum_metric_difference": 1.1102230246251565e-16,
+  "thresholds_checked": 2028,
+  "validation_minimum_loss": 135,
+  "frozen_threshold": 0.271024392128117,
+  "bootstrap_replicates": 500,
+  "confidence_intervals_match": true,
+  "model_roles_consistent": true,
+  "source_customer_ids_in_predictions": false,
+  "historical_values_unchanged": true,
+  "final_model": "LightGBM benchmark",
+  "metrics": {
+    "Average Precision": 0.971949038858016,
+    "ROC-AUC": 0.9930494406351498,
+    "Accuracy": 0.9496544916090819,
+    "Balanced Accuracy": 0.9563641284734752,
+    "Precision": 0.7758620689655172,
+    "Recall": 0.9662576687116564,
+    "F1": 0.860655737704918,
+    "Brier Score": 0.024354960501739943,
+    "Illustrative decision loss": 146,
+    "Frozen threshold": 0.271024392128117,
+    "TP": 315,
+    "FP": 91,
+    "FN": 11,
+    "TN": 1609
+  }
+}

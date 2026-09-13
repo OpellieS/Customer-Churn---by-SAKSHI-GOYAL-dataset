@@ -1,0 +1,44 @@
+{
+  "source_sha256": "c91b525a2a6755a1b0b80dad1d0d008ca97ec4df34552c8f47ffa12b6184b779",
+  "analytical_rows": 10127,
+  "source_columns": 23,
+  "raw_predictors": 19,
+  "engineered_predictors": 2,
+  "transformed_columns": 39,
+  "missing_source_cells": 0,
+  "duplicate_customer_keys": 0,
+  "source_infinite_cells": 0,
+  "invalid_range_cells": 0,
+  "naive_bayes_fields_excluded": 2,
+  "identifier_intersections": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "final_predictive_model": "LightGBM benchmark",
+  "explained_model": "Random Forest tuned",
+  "forest_parameters": {
+    "model__max_depth": null,
+    "model__max_features": "sqrt",
+    "model__min_samples_leaf": 2,
+    "model__n_estimators": 150
+  },
+  "forest_classes": [
+    0,
+    1
+  ],
+  "positive_class_index": 1,
+  "shap_reference": "tree_path_dependent (tree path training counts)",
+  "shap_additivity_max_error": 1.9317880628477724e-14,
+  "source_mapping_columns": 39,
+  "local_forest_probability": 0.9975724606640949,
+  "local_forest_base": 0.4988689534895673,
+  "local_shap_sum": 0.49870350717451156,
+  "largest_calibration_bin": {
+    "n": 202.0,
+    "mean_predicted": 0.7016340004344074,
+    "observed_churn": 0.5594059405940595,
+    "observed_minus_predicted": -0.14222805984034792
+  },
+  "calibration_summary": "Largest absolute quantile-bin gap: n=202, mean score=70.16%, observed churn=55.94% (observed minus predicted=-14.22 percentage points). This is a bin average, not a pointwise calibration estimate. Ranking and the empirical teaching-cost threshold have holdout evidence, but these scores are not validated probabilities for CLV/ROI calculations."
+}

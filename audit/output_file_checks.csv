@@ -1,0 +1,13 @@
+ไฟล์,แถว,คอลัมน์,แถวซ้ำทั้งหมด,missing_cells,ตรงกับผลก่อนหน้า_ไม่นับเวลารัน
+calibration_bins.csv,10,5,0,0,True
+cv_results.csv,12,21,0,4,True
+data_dictionary.csv,23,6,0,0,True
+final_metrics.csv,14,4,0,20,True
+model_comparison.csv,7,11,0,3,True
+partition_summary.csv,3,4,0,0,True
+retention_hypotheses.csv,4,4,0,0,True
+shap_global_importance.csv,39,3,0,0,True
+shap_source_importance.csv,21,2,0,0,True
+subgroup_metrics.csv,19,11,0,10,True
+test_predictions.csv,2026,3,1,0,True
+validation_threshold_analysis.csv,2028,11,0,0,True

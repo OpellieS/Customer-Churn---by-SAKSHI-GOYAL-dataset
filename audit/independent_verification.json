@@ -1,0 +1,17 @@
+{
+  "คำนวณ_metrics_จาก_predictions_อย่างอิสระ": "ตรงทั้งหมด",
+  "ความต่าง_metrics_สูงสุด": 1.1102230246251565e-16,
+  "threshold_ตรวจซ้ำ": 0.271024392128117,
+  "validation_loss_ต่ำสุด": 135,
+  "จำนวน_thresholds_ตรวจทุกแถว": 2028,
+  "จำนวน_threshold_ไม่ตรง": 0,
+  "bootstrap_ตรวจซ้ำ": 500,
+  "bootstrap_CI_ตรงกัน": true,
+  "ผล_CSV_ตรงกับรอบก่อน": true,
+  "cells_ที่ข้อความแสดงผลต่าง": [
+    54
+  ],
+  "test_predictions_มี_identifier": false,
+  "test_predictions_มี_missing": false,
+  "test_predictions_แถวซ้ำ": 1
+}
